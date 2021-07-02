@@ -1,0 +1,160 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "LatestNews", function () {
+    return LatestNews;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsLatestNewsActions = require("../../../../actions/latestNewsActions");
+  require("./LatestNews.css");
+  var _reactstrap = require("reactstrap");
+  require("url:../../../assets/edit.svg");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\HomePageModules\\LatestNews\\LatestNews.js";
+  class LatestNews extends _react.Component {
+    componentDidMount() {
+      this.props.fetchAllLatestNews();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 9
+          }
+        }), " ", /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 16
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row mt-4 mb-4",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          className: "text-white text-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 11
+          }
+        }, "LATEST NEWS"), this.props.latestNewsList && this.props.latestNewsList.map(singleNews => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-lg-4 col-sm-12 mt-3",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 22,
+                columnNumber: 17
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+              style: {
+                borderRadius: "20px",
+                backgroundColor: "#005792",
+                marginLeft: "20px",
+                marginTop: "25px",
+                width: "20rem",
+                boxShadow: 10
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 23,
+                columnNumber: 19
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 31,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32,
+                columnNumber: 23
+              }
+            }, singleNews.message), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 33,
+                columnNumber: 23
+              }
+            }, singleNews.newsDate.substring(0, 10)), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "btn btn-warning",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 36,
+                columnNumber: 23
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+              href: singleNews.hyperlink,
+              style: {
+                color: "black",
+                textDecoration: "none"
+              },
+              target: "_blank",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 37,
+                columnNumber: 25
+              }
+            }, "Click Here")))))
+          );
+        })), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    latestNewsList: state.latestNewsReducer.latestNewsList
+  });
+  const mapActionToProps = {
+    fetchAllLatestNews: _actionsLatestNewsActions.fetchAllLatestNews
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(LatestNews);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,27 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "editorReducer", function () {
+  return editorReducer;
+});
+var _actionsEditorActions = require("../actions/editorActions");
+const initialState = {
+  editorList: [],
+  editorListPending: true
+};
+const editorReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _actionsEditorActions.ACTION_TYPES.EDITOR_LIST:
+      return {
+        ...state,
+        editorList: [...action.payload],
+        editorListPending: false
+      };
+    case _actionsEditorActions.ACTION_TYPES.ADD_EDITOR:
+      return {
+        ...state,
+        editorList: [...state.editorList, action.payload]
+      };
+    default:
+      return state;
+  }
+};

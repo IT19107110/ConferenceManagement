@@ -1,0 +1,352 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _commonNavbarNavbar = require("../../common/Navbar/Navbar");
+  var _commonNavbarNavbarDefault = _parcelHelpers.interopDefault(_commonNavbarNavbar);
+  var _commonFooterFooter = require("../../common/Footer/Footer");
+  var _commonFooterFooterDefault = _parcelHelpers.interopDefault(_commonFooterFooter);
+  var _commonKeynoteCardKeynoteCard = require("../../common/KeynoteCard/KeynoteCard");
+  var _commonKeynoteCardKeynoteCardDefault = _parcelHelpers.interopDefault(_commonKeynoteCardKeynoteCard);
+  var _actionsReasearchpaperActions = require("../../../actions/reasearchpaperActions");
+  var _actionsWorkshopActions = require("../../../actions/workshopActions");
+  var _reactRedux = require("react-redux");
+  var _reactstrap = require("reactstrap");
+  var _reactIconsAi = require("react-icons/ai");
+  var _reactIconsIo = require("react-icons/io");
+  var _commonPaperCardPaperCard = require("../../common/PaperCard/PaperCard");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\pages\\ReviewerDashboard\\ReviewerDashboard.js";
+  class ReviewerDashboard extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.selectWorkshop = this.selectWorkshop.bind(this);
+      this.selectReasearchpaper = this.selectReasearchpaper.bind(this);
+      this.state = {
+        selectedWorkshop: null,
+        selectedReasearchpaper: null
+      };
+    }
+    componentDidMount() {
+      this.props.fetchAllUnapprovedReasearchpapers();
+      this.props.fetchAllUnapprovedWorkshops();
+    }
+    selectWorkshop(singleItem) {
+      this.setState({
+        selectedWorkshop: singleItem
+      });
+    }
+    selectReasearchpaper(singleItem) {
+      this.setState({
+        selectedReasearchpaper: singleItem
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonNavbarNavbarDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46,
+            columnNumber: 11
+          }
+        }, "REVIEWER DASHBOARD", /*#__PURE__*/_reactDefault.default.createElement("hr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48,
+            columnNumber: 13
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row mt-5 container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-sm-8 ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            borderRadius: "20px",
+            backgroundColor: "#21012B",
+            margin: "20px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          style: {
+            padding: "75px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 19
+          }
+        }, this.props.unapprovedWorkshopList && this.props.unapprovedWorkshopList.map(singleItem => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Alert, {
+              color: "danger",
+              onClick: () => {
+                this.selectWorkshop(singleItem);
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 59,
+                columnNumber: 35
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "bg-transparent border-0",
+              onClick: () => {
+                const workshoptobeApproved = {
+                  id: singleItem._id,
+                  approved: "true"
+                };
+                this.props.approveWorkshop(workshoptobeApproved);
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 60,
+                columnNumber: 39
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsAi.AiFillCheckCircle, {
+              color: "green",
+              fontSize: "1.7em",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 69,
+                columnNumber: 43
+              }
+            })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "bg-transparent border-0",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 71,
+                columnNumber: 39
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsIo.IoIosRemoveCircle, {
+              color: "red",
+              fontSize: "1.7em",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 72,
+                columnNumber: 43
+              }
+            })), /*#__PURE__*/_reactDefault.default.createElement("b", {
+              className: "ml-5",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 75,
+                columnNumber: 39
+              }
+            }, singleItem.workshop.workshopName))
+          );
+        })))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-sm-4 ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86,
+            columnNumber: 11
+          }
+        }, this.state.selectedWorkshop ? /*#__PURE__*/_reactDefault.default.createElement(_commonKeynoteCardKeynoteCardDefault.default, {
+          workshop: this.state.selectedWorkshop,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87,
+            columnNumber: 46
+          }
+        }) : "")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row mt-5 container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-sm-8 ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            borderRadius: "20px",
+            backgroundColor: "#21012B",
+            margin: "20px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 93,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          style: {
+            padding: "75px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94,
+            columnNumber: 19
+          }
+        }, this.props.unapprovedReasearchPaperList && this.props.unapprovedReasearchPaperList.map(singleItem => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Alert, {
+              color: "danger",
+              onClick: () => {
+                this.selectReasearchpaper(singleItem);
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 99,
+                columnNumber: 35
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "bg-transparent border-0",
+              onClick: () => {
+                const reasearchPapertobeApproved = {
+                  id: singleItem._id,
+                  approved: "true"
+                };
+                this.props.approveReasearchPapers(reasearchPapertobeApproved);
+                this.setState({
+                  selectedReasearchpaper: ""
+                });
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 100,
+                columnNumber: 39
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsAi.AiFillCheckCircle, {
+              color: "green",
+              fontSize: "1.7em",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 111,
+                columnNumber: 43
+              }
+            })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "bg-transparent border-0",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 113,
+                columnNumber: 39
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsIo.IoIosRemoveCircle, {
+              color: "red",
+              fontSize: "1.7em",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 114,
+                columnNumber: 43
+              }
+            })), /*#__PURE__*/_reactDefault.default.createElement("b", {
+              className: "ml-5",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 117,
+                columnNumber: 39
+              }
+            }, singleItem.researchPaper.paperTitle))
+          );
+        })))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-sm-4 ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 129,
+            columnNumber: 11
+          }
+        }, this.state.selectedReasearchpaper ? /*#__PURE__*/_reactDefault.default.createElement(_commonPaperCardPaperCard.PaperCard, {
+          reasearchPaper: this.state.selectedReasearchpaper,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 130,
+            columnNumber: 52
+          }
+        }) : "")), /*#__PURE__*/_reactDefault.default.createElement(_commonFooterFooterDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 133,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    unapprovedReasearchPaperList: state.reasearchpaperReducer.unapprovedReasearchPaperList,
+    unapprovedWorkshopList: state.workshopReducer.upapprovedWorkshopList
+  });
+  const mapActionToProps = {
+    fetchAllUnapprovedReasearchpapers: _actionsReasearchpaperActions.fetchAllUnapprovedReasearchpapers,
+    approveReasearchPapers: _actionsReasearchpaperActions.approveReasearchPapers,
+    fetchAllUnapprovedWorkshops: _actionsWorkshopActions.fetchAllUnapprovedWorkshops,
+    approveWorkshop: _actionsWorkshopActions.approveWorkshop
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(ReviewerDashboard);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

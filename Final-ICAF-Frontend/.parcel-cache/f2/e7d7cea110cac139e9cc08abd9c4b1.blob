@@ -1,0 +1,41 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllReviewers", function () {
+  return fetchAllReviewers;
+});
+_parcelHelpers.export(exports, "reviewerRegister", function () {
+  return reviewerRegister;
+});
+var _apisReviewerAPI = require("../apis/ReviewerAPI");
+var _apisReviewerAPIDefault = _parcelHelpers.interopDefault(_apisReviewerAPI);
+const ACTION_TYPES = {
+  REVIEWER_LIST: "REVIEWER_LIST",
+  ADD_REVIEWER: "ADD_REVIEWER"
+};
+const fetchAllReviewers = () => dispatch => {
+  _apisReviewerAPIDefault.default.auth().getAllEditors().then(response => {
+    dispatch({
+      type: ACTION_TYPES.REVIEWER_LIST,
+      payload: response.data
+    });
+  }).catch(() => {});
+};
+const reviewerRegister = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisReviewerAPIDefault.default.auth().register(data).then(response => {
+    const newUser = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email
+    };
+    dispatch({
+      type: ACTION_TYPES.ADD_REVIEWER,
+      payload: newUser
+    });
+    OnSuccess();
+  }).catch(() => {
+    OnFailure();
+  });
+};

@@ -1,0 +1,83 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "addLatestNews", function () {
+  return addLatestNews;
+});
+_parcelHelpers.export(exports, "fetchAllLatestNews", function () {
+  return fetchAllLatestNews;
+});
+_parcelHelpers.export(exports, "deleteLatestNews", function () {
+  return deleteLatestNews;
+});
+_parcelHelpers.export(exports, "fetchAllApprovedNews", function () {
+  return fetchAllApprovedNews;
+});
+_parcelHelpers.export(exports, "fetchAllUnapprovedNews", function () {
+  return fetchAllUnapprovedNews;
+});
+_parcelHelpers.export(exports, "approveNewsFunction", function () {
+  return approveNewsFunction;
+});
+var _apisLatestNewsAPI = require("../apis/LatestNewsAPI");
+var _apisLatestNewsAPIDefault = _parcelHelpers.interopDefault(_apisLatestNewsAPI);
+const ACTION_TYPES = {
+  ADD_LATEST_NEWS: "ADD_LATEST_NEWS",
+  GET_ALL_LATEST_NEWS: "GET_ALL_LATEST_NEWS",
+  GET_ALL_APPROVED_NEWS: "GET_ALL_APPROVED_NEWS",
+  GET_ALL_UNAPPROVED_NEWS: "GET_ALL_UNAPPROVED_NEWS",
+  APPROVE_NEWS: "APPROVE_NEWS",
+  DELETE_NEWS: "DELETE_NEWS"
+};
+const addLatestNews = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisLatestNewsAPIDefault.default.latestNews().addLatestNews(data).then(response => {
+    dispatch({
+      type: ACTION_TYPES.ADD_LATEST_NEWS,
+      payload: response.data
+    });
+    OnSuccess();
+  }).catch(() => {
+    OnFailure();
+  });
+};
+const fetchAllLatestNews = () => dispatch => {
+  _apisLatestNewsAPIDefault.default.latestNews().getAllNews().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_ALL_LATEST_NEWS,
+      payload: response.data
+    });
+  }).catch(() => {});
+};
+const deleteLatestNews = id => async dispatch => {
+  _apisLatestNewsAPIDefault.default.latestNews().deleteLatestNews(id);
+  await dispatch({
+    type: ACTION_TYPES.DELETE_NEWS,
+    payload: id
+  });
+};
+const fetchAllApprovedNews = () => dispatch => {
+  _apisLatestNewsAPIDefault.default.latestNews().getAllApprovedNews().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_ALL_APPROVED_NEWS,
+      payload: response.data
+    });
+  }).catch(() => {});
+};
+const fetchAllUnapprovedNews = () => dispatch => {
+  _apisLatestNewsAPIDefault.default.latestNews().getAllUnapprovedNews().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_ALL_UNAPPROVED_NEWS,
+      payload: response.data
+    });
+  }).catch(() => {});
+};
+const approveNewsFunction = (id, newsObj) => dispatch => {
+  _apisLatestNewsAPIDefault.default.latestNews().approveNews(id, newsObj).then(response => {
+    dispatch({
+      type: ACTION_TYPES.APPROVE_NEWS,
+      payload: response.data
+    });
+  }).catch(() => {});
+};

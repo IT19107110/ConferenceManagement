@@ -1,0 +1,265 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "AdminPresenter", function () {
+    return AdminPresenter;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsPresenterActions = require("../../../../actions/presenterActions");
+  var _reactstrap = require("reactstrap");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\AdminPageModules\\AdminPresenterModule\\AdminPresenter.js";
+  class AdminPresenter extends _react.Component {
+    componentDidMount() {
+      this.props.fetchAllPresenters();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 11
+          }
+        }, "WORKSHOP PRESENTERS"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            maxHeight: "390px",
+            overflowY: "auto"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "table-responsive",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("table", {
+          class: "table table-striped text-center my-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("thead", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          class: "table-dark",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 23
+          }
+        }, "ID"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 23
+          }
+        }, "First Name"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 23
+          }
+        }, "Last Name"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 23
+          }
+        }, "Email"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 23
+          }
+        }, "Job Status"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33,
+            columnNumber: 23
+          }
+        }, "University/WorkPlace"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 23
+          }
+        }, "Workshop"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 23
+          }
+        }, "Approved"))), /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 19
+          }
+        }, this.props.presenterList.map((singlePresenter, index) => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("tr", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41,
+                columnNumber: 25
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+              scope: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 42,
+                columnNumber: 27
+              }
+            }, ++index), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 43,
+                columnNumber: 27
+              }
+            }, singlePresenter.firstName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 44,
+                columnNumber: 27
+              }
+            }, singlePresenter.lastName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 45,
+                columnNumber: 27
+              }
+            }, singlePresenter.email), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 46,
+                columnNumber: 27
+              }
+            }, singlePresenter.jobStatus), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 47,
+                columnNumber: 27
+              }
+            }, singlePresenter.universityOrWorkPlace), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 48,
+                columnNumber: 27
+              }
+            }, singlePresenter.workshop.workshopName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 49,
+                columnNumber: 27
+              }
+            }, singlePresenter.workshop.approved ? /*#__PURE__*/_reactDefault.default.createElement("button", {
+              className: "btn btn-success",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 51,
+                columnNumber: 31
+              }
+            }, "Approved") : /*#__PURE__*/_reactDefault.default.createElement("button", {
+              className: "btn btn-danger",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 55,
+                columnNumber: 31
+              }
+            }, "Unapproved")))
+          );
+        })))))))))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    presenterList: state.presenterReducer.presenterList
+  });
+  const mapActionToProps = {
+    fetchAllPresenters: _actionsPresenterActions.fetchAllPresenters
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(AdminPresenter);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

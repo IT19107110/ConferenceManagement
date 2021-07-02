@@ -1,0 +1,45 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllApprovedReasearchpapers", function () {
+  return fetchAllApprovedReasearchpapers;
+});
+_parcelHelpers.export(exports, "fetchAllUnapprovedReasearchpapers", function () {
+  return fetchAllUnapprovedReasearchpapers;
+});
+_parcelHelpers.export(exports, "approveReasearchPapers", function () {
+  return approveReasearchPapers;
+});
+var _apisReasearchPapersAPI = require('../apis/ReasearchPapersAPI');
+var _apisReasearchPapersAPIDefault = _parcelHelpers.interopDefault(_apisReasearchPapersAPI);
+const ACTION_TYPES = {
+  GET_APPROVED_REASEARCHPAPER_LIST: "GET_APPROVED_REASEARCHPAPER_LIST",
+  GET_UNAPPROVED_REASEARCHPAPER_LIST: "GET_UNAPPROVED_REASEARCHPAPER_LIST",
+  APPROVE_REASEARCHPAPER: "APPROVE_REASEARCHPAPER"
+};
+const fetchAllApprovedReasearchpapers = () => dispatch => {
+  _apisReasearchPapersAPIDefault.default.auth().getApprovedReasearchPapers().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_APPROVED_REASEARCHPAPER_LIST,
+      payload: response.data
+    });
+  });
+};
+const fetchAllUnapprovedReasearchpapers = () => dispatch => {
+  _apisReasearchPapersAPIDefault.default.auth().getUnapprovedReasearchPapers().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_UNAPPROVED_REASEARCHPAPER_LIST,
+      payload: response.data
+    });
+  });
+};
+const approveReasearchPapers = unapprovedReasearchpaper => dispatch => {
+  _apisReasearchPapersAPIDefault.default.auth().ApproveReasearchPapers(unapprovedReasearchpaper).then(response => {
+    dispatch({
+      type: ACTION_TYPES.APPROVE_REASEARCHPAPER,
+      payload: response.data
+    });
+  });
+};

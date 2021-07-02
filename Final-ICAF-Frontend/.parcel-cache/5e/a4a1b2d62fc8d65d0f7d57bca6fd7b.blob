@@ -1,0 +1,210 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "AdminAttendee", function () {
+    return AdminAttendee;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsAttendeeActions = require("../../../../actions/attendeeActions");
+  var _reactstrap = require("reactstrap");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\modules\\AdminPageModules\\AdminAttendeeModule\\AdminAttendee.js";
+  class AdminAttendee extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    componentDidMount() {
+      this.props.fetchAllAttendees();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 11
+          }
+        }, "ATTENDEE"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            maxHeight: "390px",
+            overflowY: "auto"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "table-responsive",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 16
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("table", {
+          class: "table table-striped text-center my-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("thead", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          class: "table-dark",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 23
+          }
+        }, "ID"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 23
+          }
+        }, "First Name"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33,
+            columnNumber: 23
+          }
+        }, "Last Name"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 23
+          }
+        }, "Job Status"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 23
+          }
+        }, "University/WorkPlace"))), /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 19
+          }
+        }, this.props.attendeeList.map((singleAttendee, index) => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("tr", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41,
+                columnNumber: 25
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+              scope: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 42,
+                columnNumber: 27
+              }
+            }, ++index), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 43,
+                columnNumber: 27
+              }
+            }, singleAttendee.firstName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 44,
+                columnNumber: 27
+              }
+            }, singleAttendee.lastName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 45,
+                columnNumber: 27
+              }
+            }, singleAttendee.jobStatus), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 46,
+                columnNumber: 27
+              }
+            }, singleAttendee.universityOrWorkPlace))
+          );
+        })))))))))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    attendeeList: state.attendeeReducer.attendeeList
+  });
+  const mapActionToProps = {
+    fetchAllAttendees: _actionsAttendeeActions.fetchAllAttendees
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(AdminAttendee);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

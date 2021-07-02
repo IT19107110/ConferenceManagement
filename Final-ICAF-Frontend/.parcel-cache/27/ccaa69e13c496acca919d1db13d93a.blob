@@ -1,0 +1,102 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactStripeCheckout = require('react-stripe-checkout');
+  var _reactStripeCheckoutDefault = _parcelHelpers.interopDefault(_reactStripeCheckout);
+  var _reactstrap = require("reactstrap");
+  var _actionsAuthActions = require("../../../actions/authActions");
+  var _reactRedux = require("react-redux");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\src\\common\\StripePayment\\StripeCheckout.js";
+  class StripeCheckout extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.makePayment = this.makePayment.bind(this);
+      this.state = {
+        payment: {
+          name: "react from FB",
+          price: this.props.amount,
+          productby: "FB"
+        }
+      };
+    }
+    makePayment(token) {
+      const body = {
+        token,
+        payment: this.state.payment
+      };
+      console.log(body);
+      const header = {
+        "COntent-Type": "application/json"
+      };
+      return fetch(`http://localhost:5000/api/Payment`, {
+        method: "POST",
+        headers: header,
+        body: JSON.stringify(body)
+      }).then(response => {
+        console.log(response);
+        if (this.props.role == "ATTENDEE") {
+          const registerAttendeeObj = {
+            firstName: this.props.firstName,
+            lastName: this.props.lastName,
+            email: this.props.email,
+            password: this.props.password,
+            contactNumber: this.props.contactNumber,
+            jobStatus: this.props.jobStatus,
+            universityOrWorkPlace: this.props.universityOrWorkPlace,
+            statementOfInterest: this.props.statementOfInterest,
+            workshopAttends: this.props.workshops,
+            imgLink: this.props.imgLink
+          };
+          console.log(registerAttendeeObj);
+          this.props.attendeeRegister(registerAttendeeObj, () => {
+            alert("Success");
+            window.location = "/";
+          }, () => {});
+        }
+      }).catch(err => console.log(err));
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactStripeCheckoutDefault.default, {
+          stripeKey: "pk_test_51IrxfTFhAO44cnt88HMqK5pIY8KBk4Q7o9YyNOIMgKd7v2bCvFi8u1kkr1ftGEmo0NdjHc4BOykDMjkeRNjQd9Sj00x3xpTvSF",
+          token: this.makePayment,
+          name: "Buy react",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 21
+          }
+        }, " Pay The Registration Fee")))
+      );
+    }
+  }
+  const mapActionToProps = {
+    attendeeRegister: _actionsAuthActions.attendeeRegister
+  };
+  exports.default = _reactRedux.connect(null, mapActionToProps)(StripeCheckout);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

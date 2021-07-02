@@ -1,0 +1,256 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "PendingEditorContent", function () {
+    return PendingEditorContent;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsConferenceActions = require("../../../../actions/conferenceActions");
+  var _reactstrap = require("reactstrap");
+  var _reactIconsAi = require("react-icons/ai");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\AdminPageModules\\PendingEditorContentModule\\PendingEditorContent.js";
+  class PendingEditorContent extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    componentDidMount() {
+      this.props.fetchAllConferenceList();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 11
+          }
+        }, "PENDING EDITOR CONTENT"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Table, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("thead", {
+          className: "text-white",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 23
+          }
+        }, "No"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 23
+          }
+        }, "Workshop Title"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 23
+          }
+        }, "Description"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 23
+          }
+        }, "Status"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 23
+          }
+        }, "Approved"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 23
+          }
+        }, "Decline"))), /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          className: "text-white",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 19
+          }
+        }, this.props.conferenceList.map((singleContent, index) => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("tr", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 37,
+                columnNumber: 25
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+              scope: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 38,
+                columnNumber: 27
+              }
+            }, ++index), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 39,
+                columnNumber: 27
+              }
+            }, singleContent.confTitle), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 40,
+                columnNumber: 27
+              }
+            }, singleContent.description), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41,
+                columnNumber: 27
+              }
+            }, singleContent.approved ? /*#__PURE__*/_reactDefault.default.createElement("button", {
+              className: "btn btn-success",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 43,
+                columnNumber: 31
+              }
+            }, "Approved") : /*#__PURE__*/_reactDefault.default.createElement("button", {
+              className: "btn btn-danger",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 47,
+                columnNumber: 31
+              }
+            }, "Unpproved")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 52,
+                columnNumber: 27
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "bg-transparent border-0",
+              disabled: singleContent.approved,
+              onClick: () => {
+                const DataObj = {
+                  approved: true
+                };
+                this.props.approveConferenceDetailsByAdmin(singleContent._id, DataObj);
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 53,
+                columnNumber: 29
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsAi.AiTwotoneLike, {
+              color: "green",
+              fontSize: "1.7em",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 66,
+                columnNumber: 31
+              }
+            }))), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 69,
+                columnNumber: 27
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+              className: "bg-transparent border-0",
+              disabled: !singleContent.approved,
+              onClick: () => {
+                const DataObj = {
+                  approved: false
+                };
+                this.props.approveConferenceDetailsByAdmin(singleContent._id, DataObj);
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 70,
+                columnNumber: 29
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsAi.AiTwotoneDislike, {
+              color: "red",
+              fontSize: "1.7em",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 83,
+                columnNumber: 31
+              }
+            }))))
+          );
+        })))))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    conferenceList: state.conferenceReducer.conferenceList
+  });
+  const mapActionToProps = {
+    fetchAllConferenceList: _actionsConferenceActions.fetchAllConferenceList,
+    approveConferenceDetailsByAdmin: _actionsConferenceActions.approveConferenceDetailsByAdmin
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(PendingEditorContent);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

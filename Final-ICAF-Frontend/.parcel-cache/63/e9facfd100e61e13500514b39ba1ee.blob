@@ -1,0 +1,557 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "Navbar", function () {
+    return Navbar;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsAuthActions = require("../../../actions/authActions");
+  require("./Navbar.css");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\common\\Navbar\\Navbar.js";
+  class Navbar extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            background: "#0D335D "
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("nav", {
+          className: "navbar navbar-expand-lg navbar-fixed-top  ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "navbar-brand",
+          href: "/",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 13
+          }
+        }, "ICAF", /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "#ffb10a"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 19
+          }
+        }, "2021"))), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          className: "navbar-toggler",
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "navbar-toggler-icon",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 13
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "collapse navbar-collapse navLinkTab ",
+          id: "navbarSupportedContent",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+          className: "navbar-nav mr-auto navLinkTab",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/",
+          style: {
+            color: "#ffffff "
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 17
+          }
+        }, "HOME")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "#about",
+          style: {
+            color: "#ffffff "
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 17
+          }
+        }, "ABOUT")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/contact",
+          style: {
+            color: "#ffffff "
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 17
+          }
+        }, "CONTACT")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "#news",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65,
+            columnNumber: 17
+          }
+        }, "NEWS")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/Keynotes",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 17
+          }
+        }, "KEYNOTES")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/Papers",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 17
+          }
+        }, "PAPERS")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/templates",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92,
+            columnNumber: 17
+          }
+        }, "TEMPLATES"))), this.props.user ? /*#__PURE__*/_reactDefault.default.createElement("ul", {
+          className: "navbar-nav mr-auto navLinkTab mr-sm-5 navLinkLeft",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103,
+            columnNumber: 15
+          }
+        }, this.props.user.role == "attendee" ? /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 21
+          }
+        }, this.props.user.email)) : this.props.user.role == "admin" ? /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/admin",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 116,
+            columnNumber: 21
+          }
+        }, this.props.user.email)) : this.props.user.role == "editor" ? /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 125,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/editordashboard",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 126,
+            columnNumber: 21
+          }
+        }, this.props.user.email)) : this.props.user.role == "reviewer" ? /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 135,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/reviewerDashboard",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 136,
+            columnNumber: 21
+          }
+        }, this.props.user.email)) : this.props.user.role == "presenter" ? /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 146,
+            columnNumber: 21
+          }
+        }, this.props.user.email)) : this.props.user.role == "researcher" ? /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 155,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab js-scroll-trigger",
+          href: "/",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 156,
+            columnNumber: 21
+          }
+        }, this.props.user.email)) : "", /*#__PURE__*/_reactDefault.default.createElement("li", {
+          className: "nav-item active",
+          style: {
+            cursor: "pointer"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 167,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          className: "nav-link navLinkTab",
+          onClick: () => {
+            this.props.logout();
+          },
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 168,
+            columnNumber: 19
+          }
+        }, "Logout"))) : /*#__PURE__*/_reactDefault.default.createElement("ul", {
+          className: "navbar-nav mr-auto navLinkTab mr-sm-5 navLinkLeft",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 180,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+          class: "nav-item dropdown",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 181,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link dropdown-toggle",
+          href: "#",
+          id: "navbarDropdown",
+          role: "button",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 182,
+            columnNumber: 19
+          }
+        }, "LOGIN"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "dropdown-menu",
+          "aria-labelledby": "navbarDropdown",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 194,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "dropdown-item",
+          href: "/attendeelogin",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 195,
+            columnNumber: 21
+          }
+        }, "ATTENDEE"), /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "dropdown-item",
+          href: "/researcherlogin",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 198,
+            columnNumber: 21
+          }
+        }, "RESEARCHER"), /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "dropdown-item",
+          href: "/presenterlogin",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 201,
+            columnNumber: 21
+          }
+        }, "PRESENTER"))), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          class: "nav-item dropdown",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 206,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link dropdown-toggle",
+          href: "#",
+          id: "navbarDropdown",
+          role: "button",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false",
+          style: {
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 207,
+            columnNumber: 19
+          }
+        }, "REGISTER"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "dropdown-menu",
+          "aria-labelledby": "navbarDropdown",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 219,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "dropdown-item",
+          href: "/AttendeeRegistration",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 220,
+            columnNumber: 21
+          }
+        }, "ATTENDEE"), /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "dropdown-item",
+          href: "/ReasearcherRegistration",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 223,
+            columnNumber: 21
+          }
+        }, "RESEARCHER"), /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "dropdown-item",
+          href: "/PresenterRegistration",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 226,
+            columnNumber: 21
+          }
+        }, "PRESENTER")))))))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    user: state.authReducer.user
+  });
+  const mapActionToProps = {
+    logout: _actionsAuthActions.logout
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(Navbar);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

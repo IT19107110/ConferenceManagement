@@ -1,0 +1,384 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "ResearcherLogin", function () {
+    return ResearcherLogin;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactstrap = require('reactstrap');
+  var _urlAssetsLoginSvg = require('url:../../assets/login.svg');
+  var _urlAssetsLoginSvgDefault = _parcelHelpers.interopDefault(_urlAssetsLoginSvg);
+  var _actionsAuthActions = require("../../../actions/authActions");
+  require("../../../actions/researcherActions");
+  var _reactRedux = require("react-redux");
+  var _reactIconsBs = require("react-icons/bs");
+  var _commonStripePaymentStripeCheckout = require("../../common/StripePayment/StripeCheckout");
+  var _commonStripePaymentStripeCheckoutDefault = _parcelHelpers.interopDefault(_commonStripePaymentStripeCheckout);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\ResearcherLoginModules\\ResearcherLogin.js";
+  const mystyle = {
+    background: 'linear-gradient(to right, #03506F, #00587A, #1F618D,#2980B9)'
+  };
+  class ResearcherLogin extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onLogin = this.onLogin.bind(this);
+      this.onValueChange = this.onValueChange.bind(this);
+      this.toggle = this.toggle.bind(this);
+      this.state = {
+        email: "",
+        password: "",
+        processStatus: false,
+        processStatusAlert: "",
+        processStatusMessage: "",
+        modal: false
+      };
+    }
+    toggle() {
+      this.setState({
+        modal: !this.state.modal
+      });
+    }
+    onValueChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onLogin(e) {
+      e.preventDefault();
+      this.setState({
+        processStatus: true,
+        processStatusAlert: "alert alert-warning",
+        processStatusMessage: "Please Wait..."
+      });
+      const loginReasearcherObj = {
+        email: this.state.email,
+        password: this.state.password
+      };
+      this.props.ReasearcherLogin(loginReasearcherObj, () => {
+        this.setState({
+          processStatusAlert: "alert alert-success",
+          processStatusMessage: "Login successful"
+        });
+        window.location = "/";
+      }, () => {
+        this.setState({
+          processStatusAlert: "alert alert-danger",
+          processStatusMessage: "Username or password incorrect. Please try again."
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Container, {
+          className: "mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-6 col-md-6 container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+          src: _urlAssetsLoginSvgDefault.default,
+          alt: "regImg",
+          className: "img-fluid",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88,
+            columnNumber: 19
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: mystyle,
+          className: "col-lg-6 col-md-6 container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          style: {
+            color: "white"
+          },
+          className: "mb-2 mt-5 font-weight-bold",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 19
+          }
+        }, "RESEACHER LOGIN"), /*#__PURE__*/_reactDefault.default.createElement("hr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94,
+            columnNumber: 19
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          onSubmit: this.onLogin,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 21
+          }
+        }, this.state.processStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.processStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98,
+            columnNumber: 27
+          }
+        }, this.state.processStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          style: {
+            color: "white"
+          },
+          for: "email",
+          sm: 12,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109,
+            columnNumber: 23
+          }
+        }, "Email"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112,
+            columnNumber: 23
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "email",
+          name: "email",
+          id: "email",
+          placeholder: "Enter email",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113,
+            columnNumber: 25
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          style: {
+            color: "white"
+          },
+          for: "password",
+          sm: 12,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 125,
+            columnNumber: 23
+          }
+        }, "Password"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 128,
+            columnNumber: 23
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "password",
+          name: "password",
+          id: "password",
+          placeholder: "Enter password",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 129,
+            columnNumber: 25
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 12,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142,
+            columnNumber: 23
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "btn btn-warning",
+          type: "submit",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 143,
+            columnNumber: 25
+          }
+        }, "Submit"))))))))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 153,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Modal, {
+          isOpen: this.state.modal,
+          toggle: this.toggle,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 154,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.ModalHeader, {
+          toggle: this.toggle,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 155,
+            columnNumber: 13
+          }
+        }, " ", "Pay the registration fee"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.ModalBody, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 159,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 160,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h6", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 161,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsBs.BsCalendar, {
+          fontSize: "1.5em",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 162,
+            columnNumber: 19
+          }
+        }), " ", /*#__PURE__*/_reactDefault.default.createElement("span", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 163,
+            columnNumber: 19
+          }
+        }, " ", "Your reasearch paper has been approved. Please pay Rs1000.00 to proceed.")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 168,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_commonStripePaymentStripeCheckoutDefault.default, {
+          role: "REASEARCHER",
+          amount: "1000.00",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 169,
+            columnNumber: 17
+          }
+        }))))))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    singleReasearcher: state.researcherReducer.singleReasearcher
+  });
+  const mapActionToProps = {
+    ReasearcherLogin: _actionsAuthActions.ReasearcherLogin
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(ResearcherLogin);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

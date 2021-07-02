@@ -1,0 +1,101 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _actionsWorkshopActions = require("../../../actions/workshopActions");
+  var _reactRedux = require("react-redux");
+  var _commonNavbarNavbar = require("../../common/Navbar/Navbar");
+  var _commonNavbarNavbarDefault = _parcelHelpers.interopDefault(_commonNavbarNavbar);
+  var _commonKeynoteCardKeynoteCard = require("../../common/KeynoteCard/KeynoteCard");
+  var _commonKeynoteCardKeynoteCardDefault = _parcelHelpers.interopDefault(_commonKeynoteCardKeynoteCard);
+  var _reactstrap = require("reactstrap");
+  var _commonFooterFooter = require("../../common/Footer/Footer");
+  var _commonFooterFooterDefault = _parcelHelpers.interopDefault(_commonFooterFooter);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\pages\\KeynoteSpeakerPage\\KeynoteSpeakerPage.js";
+  class KeynoteSpeakerPage extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    componentDidMount() {
+      this.props.fetchAllApprovedWorkshops();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonNavbarNavbarDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Container, {
+          className: "mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 11
+          }
+        }, this.props.approvedWorkshopList && this.props.approvedWorkshopList.reverse().map(singleApprovedWorkshop => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-lg-4 col-md-4 col-sm-12",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 27,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_commonKeynoteCardKeynoteCardDefault.default, {
+              workshop: singleApprovedWorkshop,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 28,
+                columnNumber: 23
+              }
+            }))
+          );
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_commonFooterFooterDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    approvedWorkshopList: state.workshopReducer.approvedWorkshopList
+  });
+  const mapActionToProps = {
+    fetchAllApprovedWorkshops: _actionsWorkshopActions.fetchAllApprovedWorkshops
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(KeynoteSpeakerPage);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,290 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsAuthActions = require("../../../actions/authActions");
+  var _reactstrap = require("reactstrap");
+  var _urlAssetsLoginSvg = require("url:../../assets/login.svg");
+  var _urlAssetsLoginSvgDefault = _parcelHelpers.interopDefault(_urlAssetsLoginSvg);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\AttendeeLoginModules\\AttendeeLogin.js";
+  const mystyle = {
+    background: 'linear-gradient(to right, #03506F, #00587A, #1F618D,#2980B9)'
+  };
+  class AttendeeLogin extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onLogin = this.onLogin.bind(this);
+      this.onValueChange = this.onValueChange.bind(this);
+      this.state = {
+        email: "",
+        password: "",
+        processStatus: false,
+        processStatusAlert: "",
+        processStatusMessage: ""
+      };
+    }
+    onValueChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onLogin(e) {
+      e.preventDefault();
+      this.setState({
+        processStatus: true,
+        processStatusAlert: "alert alert-warning",
+        processStatusMessage: "Please Wait..."
+      });
+      const loginAttendeeObj = {
+        email: this.state.email,
+        password: this.state.password
+      };
+      this.props.loginAttendee(loginAttendeeObj, () => {
+        this.setState({
+          processStatusAlert: "alert alert-success",
+          processStatusMessage: "Login successful"
+        });
+        window.location = "/";
+      }, () => {
+        this.setState({
+          processStatusAlert: "alert alert-danger",
+          processStatusMessage: "Username or password incorrect. Please try again."
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Container, {
+          className: "mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-6 col-md-6 container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+          src: _urlAssetsLoginSvgDefault.default,
+          alt: "regImg",
+          className: "img-fluid",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77,
+            columnNumber: 19
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: mystyle,
+          className: "col-lg-6 col-md-6 container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "mb-2 mt-5 font-weight-bold",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 19
+          }
+        }, "ATTENDEE LOGIN"), /*#__PURE__*/_reactDefault.default.createElement("hr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 19
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          onSubmit: this.onLogin,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 21
+          }
+        }, this.state.processStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.processStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 25
+          }
+        }, this.state.processStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          style: {
+            color: "white"
+          },
+          for: "email",
+          sm: 12,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 23
+          }
+        }, "Email"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 99,
+            columnNumber: 23
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "email",
+          name: "email",
+          id: "email",
+          placeholder: "Enter email",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 100,
+            columnNumber: 23
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          style: {
+            color: "white"
+          },
+          for: "password",
+          sm: 12,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112,
+            columnNumber: 23
+          }
+        }, "Password"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115,
+            columnNumber: 23
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "password",
+          name: "password",
+          id: "password",
+          placeholder: "Enter password",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 116,
+            columnNumber: 23
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 128,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 12,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 129,
+            columnNumber: 23
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "btn btn-warning",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 130,
+            columnNumber: 25
+          }
+        }, "Submit"))))))))))
+      );
+    }
+  }
+  const mapActionToProps = {
+    loginAttendee: _actionsAuthActions.loginAttendee
+  };
+  exports.default = _reactRedux.connect(null, mapActionToProps)(AttendeeLogin);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

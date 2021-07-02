@@ -1,0 +1,78 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "HomeAboutSection", function () {
+    return HomeAboutSection;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require("url:../../../assets/home/about.svg");
+  require("./HomeAboutSection.css");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\HomePageModules\\HomeAboutSection\\HomeAboutSection.js";
+  class HomeAboutSection extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "pt-4",
+          style: {
+            backgroundColor: "#0A043C",
+            color: "#ffffff"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 8,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container text-center pt-5 pb-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          className: "mt-4",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 11
+          }
+        }, "About ICAF 2021 Conference"), /*#__PURE__*/_reactDefault.default.createElement("hr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 13
+          }
+        }, "The inaugural international conference on Application Frameworks 2021 (ICAF2021) is organized by Sri Lanka Institute of Information Technology as an open forum for academics along with industry professionals to present the latest findings and research output and practical deployments in the Application Framework domains. . Conference will be physically held at SLIIT and the Researchers will present their latest findings and implementations of different programming languages including Java, JavaScript and Python. Conference will be physically held at SLIIT."))))
+      );
+    }
+  }
+  exports.default = HomeAboutSection;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,120 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _commonFooterFooter = require("../../common/Footer/Footer");
+  var _commonFooterFooterDefault = _parcelHelpers.interopDefault(_commonFooterFooter);
+  var _modulesHomePageModulesGetInTouchSectionGetInTouch = require("../../modules/HomePageModules/GetInTouchSection/GetInTouch");
+  var _modulesHomePageModulesGetInTouchSectionGetInTouchDefault = _parcelHelpers.interopDefault(_modulesHomePageModulesGetInTouchSectionGetInTouch);
+  var _modulesHomePageModulesHomeAboutSectionHomeAboutSection = require("../../modules/HomePageModules/HomeAboutSection/HomeAboutSection");
+  var _modulesHomePageModulesHomeAboutSectionHomeAboutSectionDefault = _parcelHelpers.interopDefault(_modulesHomePageModulesHomeAboutSectionHomeAboutSection);
+  var _modulesHomePageModulesHomeHeroSectionHomeHeroSection = require("../../modules/HomePageModules/HomeHeroSection/HomeHeroSection");
+  var _modulesHomePageModulesHomeHeroSectionHomeHeroSectionDefault = _parcelHelpers.interopDefault(_modulesHomePageModulesHomeHeroSectionHomeHeroSection);
+  var _modulesHomePageModulesLatestNewsLatestNews = require("../../modules/HomePageModules/LatestNews/LatestNews");
+  var _modulesHomePageModulesLatestNewsLatestNewsDefault = _parcelHelpers.interopDefault(_modulesHomePageModulesLatestNewsLatestNews);
+  var _modulesHomePageModulesKeyNoteSpeakersKeyNoteSpeakers = require("../../modules/HomePageModules/KeyNoteSpeakers/KeyNoteSpeakers");
+  var _modulesHomePageModulesKeyNoteSpeakersKeyNoteSpeakersDefault = _parcelHelpers.interopDefault(_modulesHomePageModulesKeyNoteSpeakersKeyNoteSpeakers);
+  var _modulesHomePageModulesTimeLineSectionTimeLineSection = require("../../modules/HomePageModules/TimeLineSection/TimeLineSection");
+  var _modulesHomePageModulesTimeLineSectionTimeLineSectionDefault = _parcelHelpers.interopDefault(_modulesHomePageModulesTimeLineSectionTimeLineSection);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\pages\\HomePage\\HomePage.js";
+  class HomePage extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            height: "100vh"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_modulesHomePageModulesHomeHeroSectionHomeHeroSectionDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("section", {
+          id: "about",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_modulesHomePageModulesHomeAboutSectionHomeAboutSectionDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("section", {
+          id: "news",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_modulesHomePageModulesLatestNewsLatestNewsDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("section", {
+          id: "speakers",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_modulesHomePageModulesKeyNoteSpeakersKeyNoteSpeakersDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_modulesHomePageModulesTimeLineSectionTimeLineSectionDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_modulesHomePageModulesGetInTouchSectionGetInTouchDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_commonFooterFooterDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  exports.default = HomePage;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

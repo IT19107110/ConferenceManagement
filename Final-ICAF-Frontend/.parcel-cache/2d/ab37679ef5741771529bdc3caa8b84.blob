@@ -1,0 +1,43 @@
+var helpers = require("./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _actionsStore = require("./actions/store");
+  var _reactRedux = require("react-redux");
+  var _srcRouteRouteComponent = require("./src/route/RouteComponent");
+  var _srcRouteRouteComponentDefault = _parcelHelpers.interopDefault(_srcRouteRouteComponent);
+  require("./App.css");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\App.js";
+  class App extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactRedux.Provider, {
+          store: _actionsStore.store,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_srcRouteRouteComponentDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  exports.default = App;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

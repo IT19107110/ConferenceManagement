@@ -1,0 +1,20 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+var _authHeader = require("./authHeader");
+var _authHeaderDefault = _parcelHelpers.interopDefault(_authHeader);
+const baseUrl = "http://localhost:5000";
+const config = {
+  headers: _authHeaderDefault.default()
+};
+const attendeeApi = {
+  auth() {
+    return {
+      register: newAttendee => _axiosDefault.default.post(baseUrl + "/api/authAttendee/register", newAttendee),
+      login: loginAttendee => _axiosDefault.default.post(baseUrl + "/api/authAttendee", loginAttendee),
+      getAllAttendees: () => _axiosDefault.default.get(baseUrl + "/api/authAttendee/all", config)
+    };
+  }
+};
+exports.default = attendeeApi;

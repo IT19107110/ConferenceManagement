@@ -1,0 +1,1 @@
+module.exports = require('./bundle-url').getBundleURL() + "edit2.HASH_REF_52a36a4cf9cbdda5dc8d6f1991bf74b2.svg"

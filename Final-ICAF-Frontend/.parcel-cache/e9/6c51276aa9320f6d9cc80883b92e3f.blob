@@ -1,0 +1,21 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllPresenters", function () {
+  return fetchAllPresenters;
+});
+var _apisPresenterAPI = require("../apis/PresenterAPI");
+var _apisPresenterAPIDefault = _parcelHelpers.interopDefault(_apisPresenterAPI);
+const ACTION_TYPES = {
+  PRESENTER_LIST: "PRESENTER_LIST"
+};
+const fetchAllPresenters = () => dispatch => {
+  _apisPresenterAPIDefault.default.auth().getAllPresenters().then(response => {
+    dispatch({
+      type: ACTION_TYPES.PRESENTER_LIST,
+      payload: response.data
+    });
+  });
+};

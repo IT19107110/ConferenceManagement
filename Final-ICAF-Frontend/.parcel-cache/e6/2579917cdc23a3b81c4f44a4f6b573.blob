@@ -1,0 +1,30 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "reducers", function () {
+  return reducers;
+});
+var _redux = require("redux");
+var _authReducer = require("./authReducer");
+var _editorReducer = require("./editorReducer");
+var _reviewerReducer = require("./reviewerReducer");
+var _workshopReducer = require("./workshopReducer");
+var _conferenceReducer = require("./conferenceReducer");
+var _attendeeReducer = require("./attendeeReducer");
+var _templateReducer = require("./templateReducer");
+var _presenterReducer = require("./presenterReducer");
+var _researcherReducer = require("./researcherReducer");
+var _reasearchpaperReducar = require("./reasearchpaperReducar");
+var _latestNewsReducer = require("./latestNewsReducer");
+const reducers = _redux.combineReducers({
+  authReducer: _authReducer.authReducer,
+  editorReducer: _editorReducer.editorReducer,
+  reviewerReducer: _reviewerReducer.reviewerReducer,
+  workshopReducer: _workshopReducer.workshopReducer,
+  conferenceReducer: _conferenceReducer.conferenceReducer,
+  attendeeReducer: _attendeeReducer.attendeeReducer,
+  templateReducer: _templateReducer.templateReducer,
+  presenterReducer: _presenterReducer.presenterReducer,
+  researcherReducer: _researcherReducer.researcherReducer,
+  reasearchpaperReducer: _reasearchpaperReducar.reasearchpaperReducer,
+  latestNewsReducer: _latestNewsReducer.latestNewsReducer
+});

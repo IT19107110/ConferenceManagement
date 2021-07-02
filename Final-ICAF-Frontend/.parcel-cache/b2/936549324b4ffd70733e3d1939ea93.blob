@@ -1,0 +1,1037 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactstrap = require("reactstrap");
+  var _commonNavbarNavbar = require("../../common/Navbar/Navbar");
+  var _commonNavbarNavbarDefault = _parcelHelpers.interopDefault(_commonNavbarNavbar);
+  var _commonFooterFooter = require("../../common/Footer/Footer");
+  var _commonFooterFooterDefault = _parcelHelpers.interopDefault(_commonFooterFooter);
+  var _firebase = require("../../firebase");
+  var _commonProgressBarProgress = require("../../common/ProgressBar/Progress");
+  var _commonProgressBarProgressDefault = _parcelHelpers.interopDefault(_commonProgressBarProgress);
+  var _actionsAuthActions = require("../../../actions/authActions");
+  var _actionsWorkshopActions = require("../../../actions/workshopActions");
+  var _reactRedux = require("react-redux");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\pages\\RegReasearcher\\RegRearseacher.js";
+  const mystyle = {
+    background: 'linear-gradient(to right, #2C3E50, #34495E, #7F8C8D,#AAB7B8)'
+  };
+  const myistyle = {
+    background: "white",
+    marginLeft: 70,
+    marginRight: 70,
+    marginTop: 70,
+    marginBottom: 70,
+    boxShadow: "5px 8px 5px #9E9E9E"
+  };
+  class RegRearseacher extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+      this.onValueChange = this.onValueChange.bind(this);
+      this.uploadImage = this.uploadImage.bind(this);
+      this.onRegister = this.onRegister.bind(this);
+      this.state = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        jobStatus: "",
+        universityOrWorkPlace: "",
+        statementOfInterest: "",
+        contactNumber: "",
+        paid: "",
+        profileImg: "",
+        paperTitle: "",
+        description: "",
+        submittedDate: "",
+        paperLink: "",
+        approved: "",
+        workshops: [{
+          workshopName: ""
+        }],
+        processStatus: false,
+        processStatusAlert: "",
+        processStatusMessage: "",
+        profileProcessStatus: false,
+        profileProcessStatusAlert: "",
+        profileProcessStatusMessage: "",
+        fileProcessStatus: false,
+        fileProcessStatusAlert: "",
+        fileProcessStatusMessage: "",
+        uploadProfilePercentage: 0,
+        uploadFilePercentage: 0
+      };
+    }
+    componentDidMount() {
+      this.props.fetchAllApprovedWorkshops();
+    }
+    handleCheckboxChange = event => {
+      let singleWorkshop = {
+        workshopName: event.target.value
+      };
+      if (event.target.checked) {
+        if (!this.state.workshops.includes(singleWorkshop.workshopName)) {
+          this.setState(prevState => ({
+            workshops: [...prevState.workshops, singleWorkshop]
+          }));
+        }
+      } else {
+        this.setState(prevState => ({
+          workshops: prevState.workshops.filter(day => day.workshopName !== singleWorkshop.workshopName)
+        }));
+      }
+    };
+    onValueChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onRegister(e) {
+      e.preventDefault();
+      this.setState({
+        processStatus: true,
+        processStatusAlert: "alert alert-warning",
+        processStatusMessage: "Please Wait..."
+      });
+      const registerPresenterObj = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        password: this.state.password,
+        jobStatus: this.state.jobStatus,
+        universityOrWorkPlace: this.state.universityOrWorkPlace,
+        contactNumber: this.state.contactNumber,
+        statementOfInterest: this.state.statementOfInterest,
+        profileImg: this.state.profileImg,
+        paid: false,
+        workshopAttends: this.state.workshops,
+        researchPaper: {
+          paperTitle: this.state.paperTitle,
+          description: this.state.description,
+          paperLink: this.state.fileLink,
+          submittedDate: new Date(),
+          approved: false
+        }
+      };
+      this.props.researcherRegister(registerPresenterObj, () => {
+        this.setState({
+          processStatusAlert: "alert alert-success",
+          processStatusMessage: "Register successful"
+        });
+      }, () => {
+        this.setState({
+          processStatusAlert: "alert alert-danger",
+          processStatusMessage: "Something went wrong. Please with different email."
+        });
+      });
+    }
+    uploadFile(e) {
+      if (e.target.files[0] !== null) {
+        this.setState({
+          fileProcessStatus: true,
+          fileProcessStatusAlert: "alert alert-warning",
+          fileProcessStatusMessage: "File Uploading..."
+        });
+        const uploadTask = _firebase.storage.ref(`researchpaper/${e.target.files[0].name}`).put(e.target.files[0]);
+        uploadTask.on("state_changed", snapshot => {
+          // progress function
+          const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
+          this.setState({
+            uploadFilePercentage: progress
+          });
+        }, error => {
+          // error function
+          console.log(error);
+        }, () => {
+          // complete function
+          _firebase.storage.ref("researchpaper").child(e.target.files[0].name).getDownloadURL().then(url => {
+            console.log(url);
+            this.setState({
+              fileLink: url
+            });
+            this.setState({
+              fileProcessStatusAlert: "alert alert-success",
+              fileProcessStatusMessage: "File uploaded successfully"
+            });
+          });
+        });
+      } else {
+        this.setState({
+          fileProcessStatusAlert: "alert alert-danger",
+          fileProcessStatusMessage: "Something went wrong"
+        });
+      }
+    }
+    uploadImage(e) {
+      if (e.target.files[0] !== null) {
+        this.setState({
+          profileProcessStatus: true,
+          profileProcessStatusAlert: "alert alert-warning",
+          profileProcessStatusMessage: "Image Uploading..."
+        });
+        const uploadTask = _firebase.storage.ref(`researcher/${e.target.files[0].name}`).put(e.target.files[0]);
+        uploadTask.on("state_changed", snapshot => {
+          // progress function
+          const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
+          this.setState({
+            uploadProfilePercentage: progress
+          });
+        }, error => {
+          // error function
+          console.log(error);
+        }, () => {
+          // complete function
+          _firebase.storage.ref("researcher").child(e.target.files[0].name).getDownloadURL().then(url => {
+            console.log(url);
+            this.setState({
+              profileImg: url
+            });
+            this.setState({
+              profileProcessStatusAlert: "alert alert-success",
+              profileProcessStatusMessage: "Image uploaded successfully"
+            });
+          });
+        });
+      } else {
+        this.setState({
+          profileProcessStatusAlert: "alert alert-danger",
+          profileProcessStatusMessage: "Something went wrong"
+        });
+      }
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 251,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonNavbarNavbarDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 252,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Container, {
+          className: "mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 253,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mb-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 254,
+            columnNumber: 11
+          }
+        }, "RESEARCHER REGISTRATION"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: mystyle,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 257,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          style: myistyle,
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 258,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 259,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 260,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "First Name",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 261,
+            columnNumber: 19
+          }
+        }, "First Name"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 5,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 264,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "firstName",
+          id: "firstName",
+          placeholder: "Enter first name",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 265,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 276,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "Last Name ",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 277,
+            columnNumber: 19
+          }
+        }, "Last Name"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 5,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 280,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "lastName",
+          id: "lastName",
+          placeholder: "Enter last name",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 281,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 292,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "Last Name ",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 293,
+            columnNumber: 19
+          }
+        }, "Contact number"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 5,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 296,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "tel",
+          name: "contactNumber",
+          id: "contactNumber",
+          placeholder: "Enter the telephone number",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 297,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 308,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "email",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 309,
+            columnNumber: 19
+          }
+        }, "Email"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 312,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "email",
+          name: "email",
+          id: "email",
+          placeholder: "Enter email",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 313,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 323,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "password",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 324,
+            columnNumber: 19
+          }
+        }, "Password"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 327,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "password",
+          name: "password",
+          id: "password",
+          placeholder: "Enter password",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 328,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 339,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "jobstatus",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 340,
+            columnNumber: 19
+          }
+        }, "Job Status"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 343,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "select",
+          name: "jobStatus",
+          id: "jobstatus",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 344,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("option", {
+          unselectable: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 345,
+            columnNumber: 23
+          }
+        }, "Select Job Status"), /*#__PURE__*/_reactDefault.default.createElement("option", {
+          value: "Professional",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 346,
+            columnNumber: 23
+          }
+        }, "Professional"), /*#__PURE__*/_reactDefault.default.createElement("option", {
+          value: "Student",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 347,
+            columnNumber: 23
+          }
+        }, "Student"), /*#__PURE__*/_reactDefault.default.createElement("option", {
+          value: "Industry Expert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 348,
+            columnNumber: 23
+          }
+        }, "Industry expert")))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 353,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "exampleFile",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 354,
+            columnNumber: 19
+          }
+        }, "Profile picture"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 357,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "file",
+          name: "file",
+          id: "exampleFile",
+          onChange: e => {
+            this.uploadImage(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 358,
+            columnNumber: 21
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormText, {
+          color: "muted",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 359,
+            columnNumber: 21
+          }
+        }, "This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line."))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 367,
+            columnNumber: 17
+          }
+        }, this.state.profileProcessStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.profileProcessStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 369,
+            columnNumber: 23
+          }
+        }, this.state.profileProcessStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 380,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonProgressBarProgressDefault.default, {
+          percentage: this.state.uploadProfilePercentage,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 381,
+            columnNumber: 19
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 384,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "universityWorkplace",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 385,
+            columnNumber: 19
+          }
+        }, "University/Workplace"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 5,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 388,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "universityOrWorkPlace",
+          id: "universityWorkplace",
+          placeholder: "Enter the university or the workplace",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 389,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 399,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "exampleText",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 400,
+            columnNumber: 19
+          }
+        }, "Statement of Interests"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 403,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "textarea",
+          name: "statementOfInterest",
+          id: "exampleText",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 404,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 408,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "checkbox2",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 409,
+            columnNumber: 19
+          }
+        }, "Select if you are attending", " "), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: {
+            size: 10
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 412,
+            columnNumber: 19
+          }
+        }, this.props.approvedWorkshopList.map(singleWorkshop => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+              check: true,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 414,
+                columnNumber: 25
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+              check: true,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 415,
+                columnNumber: 27
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+              type: "checkbox",
+              id: singleWorkshop.workshop.workshopName,
+              value: singleWorkshop.workshop.workshopName,
+              onChange: this.handleCheckboxChange,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 416,
+                columnNumber: 29
+              }
+            }), " ", singleWorkshop.workshop.workshopName))
+          );
+        }))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 422,
+            columnNumber: 17
+          }
+        }))))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Container, {
+          className: "mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 428,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: mystyle,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 429,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          style: myistyle,
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 430,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          onSubmit: this.onRegister,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 431,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 432,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "PaperTitle",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 433,
+            columnNumber: 19
+          }
+        }, "Paper Title"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 5,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 436,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "paperTitle",
+          id: "paperTitle",
+          placeholder: "Enter the paper title",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 437,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 449,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "exampleFile",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 450,
+            columnNumber: 19
+          }
+        }, "Wordfile"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 453,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "file",
+          name: "file",
+          id: "exampleFile",
+          onChange: e => {
+            this.uploadFile(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 454,
+            columnNumber: 21
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormText, {
+          color: "muted",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 459,
+            columnNumber: 21
+          }
+        }, "This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line."))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 467,
+            columnNumber: 17
+          }
+        }, this.state.fileProcessStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.fileProcessStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 469,
+            columnNumber: 23
+          }
+        }, this.state.fileProcessStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 480,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonProgressBarProgressDefault.default, {
+          percentage: this.state.uploadFilePercentage,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 481,
+            columnNumber: 19
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 486,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "exampleText",
+          sm: 2,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 487,
+            columnNumber: 19
+          }
+        }, "Description"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: 10,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 490,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "textare",
+          name: "description",
+          id: "description",
+          placeholder: "Enter description",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 491,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 504,
+            columnNumber: 17
+          }
+        }, this.state.processStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.processStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 506,
+            columnNumber: 23
+          }
+        }, this.state.processStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          check: true,
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 514,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: {
+            size: 10,
+            offset: 2
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 515,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "btn btn-warning",
+          type: "submit",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 516,
+            columnNumber: 21
+          }
+        }, "Submit"))))))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 526,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 527,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 528,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_commonFooterFooterDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 529,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  const mapActionToProps = {
+    researcherRegister: _actionsAuthActions.ReasearcherRegister,
+    fetchAllApprovedWorkshops: _actionsWorkshopActions.fetchAllApprovedWorkshops
+  };
+  const mapStateToProps = state => ({
+    approvedWorkshopList: state.workshopReducer.approvedWorkshopList
+  });
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(RegRearseacher);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

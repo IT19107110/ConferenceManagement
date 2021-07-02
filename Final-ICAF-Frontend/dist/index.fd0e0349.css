@@ -1,0 +1,249 @@
+.FooterBackground {
+  background-color: #051b33;
+}
+
+.cardFooter {
+  background-color: #082649 !important;
+  color: white;
+  margin-top: 50px;
+  border: none;
+}
+
+.head1 {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.bdr {
+  border-bottom: 1.5px solid #ff8220;
+  width: 65px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-footer {
+  justify-content: space-between;
+  border: none;
+  background: none;
+  border-bottom: 0.5px solid #9e9e9e;
+}
+
+.footer-right > i {
+  margin-left: 15px;
+}
+
+.fa-hand-holding-usd {
+  color: #ffb74d;
+}
+
+.fa-handshake {
+  color: #ffb74d;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+  font-size: 15px;
+  margin-top: 1.75rem;
+}
+
+.learn-more {
+  color: #ffb74d;
+}
+
+.fa-angle-right {
+  margin-left: 10px;
+}
+
+.fa-3x {
+  color: #ffb74d;
+}
+
+.card-content {
+  padding-right: 40px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.card-content > p {
+  color: #9e9e9e;
+}
+
+.heading {
+  position: relative;
+  top: 75px;
+}
+
+.follow-text {
+  color: #9e9e9e;
+}
+
+.googleMapDiv {
+  width: 100%;
+  height: 100%;
+}
+
+
+.navLinkTab {
+  font-weight: bolder;
+}
+
+.navLinkLeft {
+  margin-right: 10%;
+}
+/* body { padding-top: 20px; } */
+.bg-light {
+  border-bottom: 4px solid #dddede;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/* .navbar + nav{
+margin-top:25px;
+margin-bottom:5px;
+} */
+
+
+.conferenceDetailsSection {
+  color: cornsilk;
+  padding-top: 10%;
+}
+
+.conferenceDateDiv {
+  background-color: #073550;
+  padding: 2%;
+  color: rgb(104, 159, 211);
+}
+
+.countDownDiv {
+  background-color: rgb(218, 218, 218);
+  color: rgb(0, 0, 0);
+  margin-right: 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.countDownData {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.countDownTitle {
+  background-color: rgb(202, 202, 202);
+  font-size: large;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+}
+
+.HomeHeroDiv {
+  background-image: linear-gradient(
+    to right top,
+    #142850,
+    #1c3463,
+    #27496D, 
+    #325b86,
+    #0C7B93,
+    #00A8CC,
+  
+  );
+}
+
+@media only screen and (min-width: 800px) {
+  .HomeHeroDiv {
+    height: 100vh;
+  }
+}
+
+.CardDiv {
+  background-image: linear-gradient(
+    to bottom,
+    #165763,
+    #2d6161,
+    #22343b,
+    #01a1a1,
+    #10688b
+  );
+  color: aliceblue;
+}
+
+
+.timeLineEventDate {
+  color: aliceblue;
+}
+
+.timeLineEvent {
+  border-radius: 5px;
+  background-color: #b50097;
+  padding: 6%;
+  color: aliceblue;
+  font-weight: bold;
+}
+@media only screen and (min-width: 800px) {
+  .timeLineEventDate {
+    color: aliceblue;
+    font-size: larger;
+  }
+
+  .timeLineEvent {
+    background-color: #b50097;
+    border-radius: 15px;
+    padding: 15px 20px;
+    color: aliceblue;
+    font-size: larger;
+    font-weight: bold;
+  }
+}
+
+.templateTitle {
+  background-color: aliceblue;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #0c4e5a,
+    #0a5e77,
+    #0d688b,
+    #1082af,
+    #58b3e7,
+    #a1d9fa
+  );
+}
+
+/*Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hrTopic {
+  width: 20%;
+  color: rgb(187, 100, 0);
+}
+
+/*# sourceMappingURL=index.fd0e0349.css.map */

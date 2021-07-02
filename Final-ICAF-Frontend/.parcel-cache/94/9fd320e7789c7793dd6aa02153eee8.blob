@@ -1,0 +1,53 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "HomeHeroSection", function () {
+    return HomeHeroSection;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _commonNavbarNavbar = require("../../../common/Navbar/Navbar");
+  var _commonNavbarNavbarDefault = _parcelHelpers.interopDefault(_commonNavbarNavbar);
+  var _HomePageConferenceDetailHomePageConferenceDetail = require("../HomePageConferenceDetail/HomePageConferenceDetail");
+  var _HomePageConferenceDetailHomePageConferenceDetailDefault = _parcelHelpers.interopDefault(_HomePageConferenceDetailHomePageConferenceDetail);
+  require("./HomeHeroSection.css");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\HomePageModules\\HomeHeroSection\\HomeHeroSection.js";
+  class HomeHeroSection extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "HomeHeroDiv",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonNavbarNavbarDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_HomePageConferenceDetailHomePageConferenceDetailDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  exports.default = HomeHeroSection;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

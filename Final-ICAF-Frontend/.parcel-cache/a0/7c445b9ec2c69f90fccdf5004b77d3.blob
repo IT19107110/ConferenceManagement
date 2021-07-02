@@ -1,0 +1,75 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "addTemplate", function () {
+  return addTemplate;
+});
+_parcelHelpers.export(exports, "viewTemplate", function () {
+  return viewTemplate;
+});
+_parcelHelpers.export(exports, "deleteTemplate", function () {
+  return deleteTemplate;
+});
+_parcelHelpers.export(exports, "viewTemplateApproved", function () {
+  return viewTemplateApproved;
+});
+_parcelHelpers.export(exports, "approveTemplate", function () {
+  return approveTemplate;
+});
+var _apisTemplateAPI = require("../apis/TemplateAPI");
+var _apisTemplateAPIDefault = _parcelHelpers.interopDefault(_apisTemplateAPI);
+const ACTION_TYPES = {
+  ADD_TEMPLATE: "ADD_TEMPLATE",
+  GET_ALL_TEMPLATES: "GET_ALL_TEMPLATES",
+  DELETE_TEMPLATE: "DELETE_TEMPLATE",
+  GET_ALL_APPROVED_TEMPLATE_LIST: "GET_ALL_APPROVED_TEMPLATE_LIST",
+  APPROVED_TEMPLATE: "APPROVED_TEMPLATE"
+};
+const addTemplate = (data, OnSuccess, OnFailure) => dispatch => {
+  console.log(data);
+  _apisTemplateAPIDefault.default.auth().addTemplate(data).then(response => {
+    dispatch({
+      type: ACTION_TYPES.ADD_TEMPLATE,
+      payload: response.data
+    });
+    OnSuccess();
+  }).catch(() => {
+    OnFailure();
+  });
+};
+const viewTemplate = () => dispatch => {
+  _apisTemplateAPIDefault.default.auth().viewTemplate().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_ALL_TEMPLATES,
+      payload: response.data
+    });
+  });
+};
+const deleteTemplate = id => dispatch => {
+  _apisTemplateAPIDefault.default.auth().deleteTemplate(id).then(() => {
+    dispatch({
+      type: ACTION_TYPES.DELETE_TEMPLATE,
+      payload: {
+        id
+      }
+    });
+  }).catch(() => {});
+};
+const viewTemplateApproved = () => dispatch => {
+  _apisTemplateAPIDefault.default.auth().viewTemplateApproved().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_ALL_APPROVED_TEMPLATE_LIST,
+      payload: response.data
+    });
+  });
+};
+const approveTemplate = (id, approveObj) => dispatch => {
+  _apisTemplateAPIDefault.default.auth().approveTemplate(id, approveObj).then(response => {
+    dispatch({
+      type: ACTION_TYPES.APPROVED_TEMPLATE,
+      payload: response.data
+    });
+  });
+};

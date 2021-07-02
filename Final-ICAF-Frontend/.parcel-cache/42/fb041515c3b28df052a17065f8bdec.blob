@@ -1,0 +1,41 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllEditors", function () {
+  return fetchAllEditors;
+});
+_parcelHelpers.export(exports, "editorRegister", function () {
+  return editorRegister;
+});
+var _apisEditorAPI = require("../apis/EditorAPI");
+var _apisEditorAPIDefault = _parcelHelpers.interopDefault(_apisEditorAPI);
+const ACTION_TYPES = {
+  EDITOR_LIST: "EDITOR_LIST",
+  ADD_EDITOR: "ADD_EDITOR"
+};
+const fetchAllEditors = () => dispatch => {
+  _apisEditorAPIDefault.default.auth().getAllEditors().then(response => {
+    dispatch({
+      type: ACTION_TYPES.EDITOR_LIST,
+      payload: response.data
+    });
+  }).catch(() => {});
+};
+const editorRegister = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisEditorAPIDefault.default.auth().register(data).then(response => {
+    const newuser = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email
+    };
+    dispatch({
+      type: ACTION_TYPES.ADD_EDITOR,
+      payload: newuser
+    });
+    OnSuccess();
+  }).catch(() => {
+    OnFailure();
+  });
+};

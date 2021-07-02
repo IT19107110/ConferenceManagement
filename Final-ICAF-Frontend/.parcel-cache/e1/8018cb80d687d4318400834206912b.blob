@@ -1,0 +1,358 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require('react-router-dom');
+  var _pagesHomePageHomePage = require('../pages/HomePage/HomePage');
+  var _pagesHomePageHomePageDefault = _parcelHelpers.interopDefault(_pagesHomePageHomePage);
+  var _pagesRegPresenterRegPresenter = require('../pages/RegPresenter/RegPresenter');
+  var _pagesRegPresenterRegPresenterDefault = _parcelHelpers.interopDefault(_pagesRegPresenterRegPresenter);
+  var _pagesRegAttendeeRegAttendee = require('../pages/RegAttendee/RegAttendee');
+  var _pagesRegAttendeeRegAttendeeDefault = _parcelHelpers.interopDefault(_pagesRegAttendeeRegAttendee);
+  var _pagesRegReasearcherRegRearseacher = require('../pages/RegReasearcher/RegRearseacher');
+  var _pagesRegReasearcherRegRearseacherDefault = _parcelHelpers.interopDefault(_pagesRegReasearcherRegRearseacher);
+  var _pagesKeynoteSpeakerPageKeynoteSpeakerPage = require('../pages/KeynoteSpeakerPage/KeynoteSpeakerPage');
+  var _pagesKeynoteSpeakerPageKeynoteSpeakerPageDefault = _parcelHelpers.interopDefault(_pagesKeynoteSpeakerPageKeynoteSpeakerPage);
+  var _pagesTemplatePageTemplatePage = require('../pages/TemplatePage/TemplatePage');
+  var _pagesTemplatePageTemplatePageDefault = _parcelHelpers.interopDefault(_pagesTemplatePageTemplatePage);
+  var _pagesAdminPageAdminPage = require('../pages/AdminPage/AdminPage');
+  var _pagesAdminPageAdminPageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminPage);
+  var _pagesAdminPageAdminEditorPage = require('../pages/AdminPage/AdminEditorPage');
+  var _pagesAdminPageAdminEditorPageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminEditorPage);
+  var _pagesAdminPageAdminReviewerPage = require('../pages/AdminPage/AdminReviewerPage');
+  var _pagesAdminPageAdminReviewerPageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminReviewerPage);
+  var _pagesAdminPageAdminAttendeePage = require('../pages/AdminPage/AdminAttendeePage');
+  var _pagesAdminPageAdminAttendeePageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminAttendeePage);
+  var _pagesAdminPageAdminResearcherPage = require('../pages/AdminPage/AdminResearcherPage');
+  var _pagesAdminPageAdminResearcherPageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminResearcherPage);
+  var _pagesAdminPageAdminPresenterPage = require('../pages/AdminPage/AdminPresenterPage');
+  var _pagesAdminPageAdminPresenterPageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminPresenterPage);
+  var _pagesAdminPageAdminConferenceDetailsPage = require('../pages/AdminPage/AdminConferenceDetailsPage');
+  var _pagesAdminPageAdminConferenceDetailsPageDefault = _parcelHelpers.interopDefault(_pagesAdminPageAdminConferenceDetailsPage);
+  var _pagesProfilePageProfilePage = require('../pages/ProfilePage/ProfilePage');
+  var _pagesProfilePageProfilePageDefault = _parcelHelpers.interopDefault(_pagesProfilePageProfilePage);
+  var _pagesReasearchPapersPageReasearchPapersPage = require('../pages/ReasearchPapersPage/ReasearchPapersPage');
+  var _pagesReasearchPapersPageReasearchPapersPageDefault = _parcelHelpers.interopDefault(_pagesReasearchPapersPageReasearchPapersPage);
+  var _pagesReviewerDashboardReviewerDashboard = require('../pages/ReviewerDashboard/ReviewerDashboard');
+  var _pagesReviewerDashboardReviewerDashboardDefault = _parcelHelpers.interopDefault(_pagesReviewerDashboardReviewerDashboard);
+  var _pagesEditorDashboardEditorDashboard = require('../pages/EditorDashboard/EditorDashboard');
+  var _pagesEditorDashboardEditorDashboardDefault = _parcelHelpers.interopDefault(_pagesEditorDashboardEditorDashboard);
+  var _pagesRegAdminRegAdmin = require('../pages/RegAdmin/RegAdmin');
+  var _pagesRegAdminRegAdminDefault = _parcelHelpers.interopDefault(_pagesRegAdminRegAdmin);
+  var _pagesAdminLoginPageAdminLoginPage = require('../pages/AdminLoginPage/AdminLoginPage');
+  var _pagesAdminLoginPageAdminLoginPageDefault = _parcelHelpers.interopDefault(_pagesAdminLoginPageAdminLoginPage);
+  var _pagesReviewerLoginPageReviewerLoginPage = require('../pages/ReviewerLoginPage/ReviewerLoginPage');
+  var _pagesReviewerLoginPageReviewerLoginPageDefault = _parcelHelpers.interopDefault(_pagesReviewerLoginPageReviewerLoginPage);
+  var _pagesResearcherLoginPageResearcherLoginPage = require('../pages/ResearcherLoginPage/ResearcherLoginPage');
+  var _pagesResearcherLoginPageResearcherLoginPageDefault = _parcelHelpers.interopDefault(_pagesResearcherLoginPageResearcherLoginPage);
+  var _pagesPresenterLoginPagePresenterLoginPage = require('../pages/PresenterLoginPage/PresenterLoginPage');
+  var _pagesPresenterLoginPagePresenterLoginPageDefault = _parcelHelpers.interopDefault(_pagesPresenterLoginPagePresenterLoginPage);
+  var _pagesAttendeeLoginPageAttendeeLoginPage = require("../pages/AttendeeLoginPage/AttendeeLoginPage");
+  var _pagesAttendeeLoginPageAttendeeLoginPageDefault = _parcelHelpers.interopDefault(_pagesAttendeeLoginPageAttendeeLoginPage);
+  var _pagesEditorLoginPageEditorLoginPage = require("../pages/EditorLoginPage/EditorLoginPage");
+  var _pagesEditorLoginPageEditorLoginPageDefault = _parcelHelpers.interopDefault(_pagesEditorLoginPageEditorLoginPage);
+  var _pagesContactPageContactPage = require('../pages/ContactPage/ContactPage');
+  var _pagesContactPageContactPageDefault = _parcelHelpers.interopDefault(_pagesContactPageContactPage);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\route\\RouteComponent.js";
+  class RouteComponent extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Switch, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/",
+          exact: true,
+          component: _pagesHomePageHomePageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/PresenterRegistration",
+          exact: true,
+          component: _pagesRegPresenterRegPresenterDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/ReasearcherRegistration",
+          exact: true,
+          component: _pagesRegReasearcherRegRearseacherDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/AttendeeRegistration",
+          exact: true,
+          component: _pagesRegAttendeeRegAttendeeDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/Keynotes",
+          exact: true,
+          component: _pagesKeynoteSpeakerPageKeynoteSpeakerPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/templates",
+          exact: true,
+          component: _pagesTemplatePageTemplatePageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/admin",
+          exact: true,
+          component: _pagesAdminPageAdminPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/admineditor",
+          exact: true,
+          component: _pagesAdminPageAdminEditorPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminreviewer",
+          exact: true,
+          component: _pagesAdminPageAdminReviewerPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminattendee",
+          exact: true,
+          component: _pagesAdminPageAdminAttendeePageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminresearcher",
+          exact: true,
+          component: _pagesAdminPageAdminResearcherPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminpresenter",
+          exact: true,
+          component: _pagesAdminPageAdminPresenterPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminconference",
+          exact: true,
+          component: _pagesAdminPageAdminConferenceDetailsPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/Papers",
+          exact: true,
+          component: _pagesReasearchPapersPageReasearchPapersPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/Profile",
+          exact: true,
+          component: _pagesProfilePageProfilePageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/ReviewerDashboard",
+          exact: true,
+          component: _pagesReviewerDashboardReviewerDashboardDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/editordashboard",
+          exact: true,
+          component: _pagesEditorDashboardEditorDashboardDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/ReviewerDashboard",
+          exact: true,
+          component: _pagesReviewerDashboardReviewerDashboardDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminreg",
+          exact: true,
+          component: _pagesRegAdminRegAdminDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminlogin",
+          exact: true,
+          component: _pagesAdminLoginPageAdminLoginPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/reviewerlogin",
+          exact: true,
+          component: _pagesReviewerLoginPageReviewerLoginPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/researcherlogin",
+          exact: true,
+          component: _pagesResearcherLoginPageResearcherLoginPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/presenterlogin",
+          exact: true,
+          component: _pagesPresenterLoginPagePresenterLoginPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/attendeelogin",
+          exact: true,
+          component: _pagesAttendeeLoginPageAttendeeLoginPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/editorlogin",
+          exact: true,
+          component: _pagesEditorLoginPageEditorLoginPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/attendeeRegister",
+          exact: true,
+          component: _pagesRegAttendeeRegAttendeeDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/contact",
+          exact: true,
+          component: _pagesContactPageContactPageDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60,
+            columnNumber: 11
+          }
+        })))
+      );
+    }
+  }
+  exports.default = RouteComponent;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

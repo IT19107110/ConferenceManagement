@@ -1,0 +1,15 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+const baseUrl = "http://localhost:5000";
+const authReviewerApi = {
+  auth() {
+    return {
+      register: newReviewer => _axiosDefault.default.post(baseUrl + "/api/authReviewer/register", newReviewer),
+      login: loginReviewer => _axiosDefault.default.post(baseUrl + "/api/authReviewer", loginReviewer),
+      getAllEditors: () => _axiosDefault.default.get(baseUrl + "/api/authReviewer/all")
+    };
+  }
+};
+exports.default = authReviewerApi;

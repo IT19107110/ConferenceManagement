@@ -1,0 +1,176 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require("./Footer.css");
+  var _reactIconsAi = require("react-icons/ai");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\common\\Footer\\Footer.js";
+  class Footer extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "FooterBackground",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container-fluid",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "card cardFooter",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "heading text-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "card-footer row m-0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "head1",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 13
+          }
+        }, "CONTACT US"), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          className: "bdr",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          className: "text",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 15
+          }
+        }, "Department of Software Engineering, Faculty of Computing, SLIIT, Sri Lanka"), /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          className: "text",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 15
+          }
+        }, "Telephone: +94 77 688 7978, Email: icaf@sliit.lk"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 17
+          }
+        }, " ", /*#__PURE__*/_reactDefault.default.createElement("small", {
+          className: "follow-text",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 19
+          }
+        }, "FOLLOW US ON SOCIAL MEDIA"), " ", /*#__PURE__*/_reactDefault.default.createElement("label", {
+          className: "footer-right",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 19
+          }
+        }, " ", /*#__PURE__*/_reactDefault.default.createElement("i", {
+          className: "fab fa-facebook-square",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 21
+          }
+        }), " ", /*#__PURE__*/_reactDefault.default.createElement("i", {
+          className: "fab fa-instagram",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 21
+          }
+        }), " ", /*#__PURE__*/_reactDefault.default.createElement("i", {
+          className: "fab fa-linkedin",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 21
+          }
+        }), " "), " "))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "mt-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          className: "text-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsAi.AiOutlineCopyrightCircle, {
+          color: "white",
+          fontSize: "1.5em",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 42
+          }
+        }), " 2021 SLIIT Developed By Cord Nerds, All Rights Reserved ")))))
+      );
+    }
+  }
+  exports.default = Footer;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,222 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "AddTemplates", function () {
+    return AddTemplates;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsTemplateActions = require("../../../actions/templateActions");
+  var _reactstrap = require("reactstrap");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\modules\\EditorDashboardModules\\AddTemplates.js";
+  class AddTemplates extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onAddTemplate = this.onAddTemplate.bind(this);
+      this.state = {
+        templateName: "",
+        fileLink: "",
+        processStatus: false,
+        processStatusAlert: "",
+        processStatusMessage: ""
+      };
+    }
+    onValueChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onAddTemplate(e) {
+      e.preventDefault();
+      this.setState({
+        processStatus: true,
+        processStatusAlert: "alert alert-warning",
+        processStatusMessage: "Please wait"
+      });
+      const addTemplates = {
+        templateName: this.state.templateName,
+        fileLink: this.state.fileLink
+      };
+      this.props.addTemplate(addTemplates, () => {
+        this.setState({
+          processStatusAlert: "alert alert-success",
+          processStatusMessage: "Successful"
+        });
+      }, () => {
+        this.setState({
+          processStatusAlert: "alert alert-danger",
+          processStatusMessage: "Please try again."
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row justify-content-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            width: '40rem'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          style: {
+            textAlign: "center"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 13
+          }
+        }, "CREATE TEMPLATES"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          onSubmit: this.onAddTemplate,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "WordLink",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 19
+          }
+        }, "Template Name"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "templateName",
+          id: "templateName",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "WordLink",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88,
+            columnNumber: 19
+          }
+        }, "File"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "fileLink",
+          id: "fileLink",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 101,
+            columnNumber: 17
+          }
+        }, this.state.processStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.processStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103,
+            columnNumber: 21
+          }
+        }, this.state.processStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: {
+            size: 10,
+            offset: 2
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "btn btn-success",
+          type: "submit",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113,
+            columnNumber: 21
+          }
+        }, "Submit"))))))))
+      );
+    }
+  }
+  const mapActionToProps = {
+    addTemplate: _actionsTemplateActions.addTemplate
+  };
+  exports.default = _reactRedux.connect(null, mapActionToProps)(AddTemplates);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

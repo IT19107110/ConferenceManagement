@@ -1,0 +1,109 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsTemplateActions = require("../../../actions/templateActions");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\EditorDashboardModules\\TemplateTable.js";
+  class TemplateTable extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    componentDidMount() {
+      this.props.viewTemplate();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 9
+          }
+        }, this.props.templates && this.props.templates.map(singleTemplate => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-lg-6 p-4",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 21,
+                columnNumber: 17
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+              className: "mt-2",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 22,
+                columnNumber: 19
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+              className: "templateTitle",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 23,
+                columnNumber: 21
+              }
+            }, singleTemplate.templateName, /*#__PURE__*/_reactDefault.default.createElement("button", {
+              className: "btn btn-sm btn-danger font-weight-bolder m-2",
+              onClick: () => this.props.deleteTemplate(singleTemplate._id),
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 25,
+                columnNumber: 23
+              }
+            }, "X"))), /*#__PURE__*/_reactDefault.default.createElement("iframe", {
+              src: singleTemplate.fileLink,
+              width: "100%",
+              height: "600px",
+              frameBorder: "0",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 36,
+                columnNumber: 19
+              }
+            }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 43,
+                columnNumber: 19
+              }
+            }))
+          );
+        })))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    templates: state.templateReducer.templates
+  });
+  const mapActionToProps = {
+    viewTemplate: _actionsTemplateActions.viewTemplate,
+    deleteTemplate: _actionsTemplateActions.deleteTemplate
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(TemplateTable);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

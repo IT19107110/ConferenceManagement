@@ -1,0 +1,78 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "AdminPage", function () {
+    return AdminPage;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _commonNavbarNavbar = require("../../common/Navbar/Navbar");
+  var _commonNavbarNavbarDefault = _parcelHelpers.interopDefault(_commonNavbarNavbar);
+  var _commonFooterFooter = require("../../common/Footer/Footer");
+  var _commonFooterFooterDefault = _parcelHelpers.interopDefault(_commonFooterFooter);
+  var _modulesAdminPageModulesAdminDashboardModuleAdminDashboard = require("../../modules/AdminPageModules/AdminDashboardModule/AdminDashboard");
+  var _modulesAdminPageModulesAdminDashboardModuleAdminDashboardDefault = _parcelHelpers.interopDefault(_modulesAdminPageModulesAdminDashboardModuleAdminDashboard);
+  var _modulesAdminPageModulesPendingEditorContentModulePendingEditorContent = require("../../modules/AdminPageModules/PendingEditorContentModule/PendingEditorContent");
+  var _modulesAdminPageModulesPendingEditorContentModulePendingEditorContentDefault = _parcelHelpers.interopDefault(_modulesAdminPageModulesPendingEditorContentModulePendingEditorContent);
+  var _modulesAdminPageModulesPendingEditorTemplatesModulePendingEditorTemplates = require("../../modules/AdminPageModules/PendingEditorTemplatesModule/PendingEditorTemplates");
+  var _modulesAdminPageModulesPendingEditorTemplatesModulePendingEditorTemplatesDefault = _parcelHelpers.interopDefault(_modulesAdminPageModulesPendingEditorTemplatesModulePendingEditorTemplates);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\pages\\AdminPage\\AdminPage.js";
+  class AdminPage extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_commonNavbarNavbarDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_modulesAdminPageModulesAdminDashboardModuleAdminDashboardDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_modulesAdminPageModulesPendingEditorContentModulePendingEditorContentDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_modulesAdminPageModulesPendingEditorTemplatesModulePendingEditorTemplatesDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_commonFooterFooterDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 9
+          }
+        }))
+      );
+    }
+  }
+  exports.default = AdminPage;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

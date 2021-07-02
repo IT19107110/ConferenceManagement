@@ -1,0 +1,270 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "ConferenceCard", function () {
+    return ConferenceCard;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsConferenceActions = require("../../../actions/conferenceActions");
+  var _reactstrap = require("reactstrap");
+  require("react-icons/fa");
+  require("react-icons/bs");
+  require("react-icons/cg");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\EditorDashboardModules\\ConferenceCard.js";
+  class ConferenceCard extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    componentDidMount() {
+      this.props.fetchAllApprovedConferenceList();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 7
+          }
+        }, this.props.approvedConferenceList.reverse().slice(0, 1).map(singleConference => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+              style: {
+                borderRadius: "20px",
+                backgroundColor: "#21012B",
+                marginLeft: "20px"
+              },
+              className: "text-center",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 26,
+                columnNumber: 15
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34,
+                columnNumber: 17
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+              className: "text-white display-5",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 35,
+                columnNumber: 19
+              }
+            }, "Conference Details"), /*#__PURE__*/_reactDefault.default.createElement("hr", {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 36,
+                columnNumber: 19
+              }
+            }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardTitle, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 37,
+                columnNumber: 19
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 38,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-center",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 39,
+                columnNumber: 23
+              }
+            }, "Title "), /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-left",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41,
+                columnNumber: 23
+              }
+            }, singleConference.confTitle))), /*#__PURE__*/_reactDefault.default.createElement("center", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 46,
+                columnNumber: 19
+              }
+            }, " ", /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 48,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 49,
+                columnNumber: 23
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-center",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 50,
+                columnNumber: 25
+              }
+            }, "About "), /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-left",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 52,
+                columnNumber: 25
+              }
+            }, " ", singleConference.description))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 58,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 59,
+                columnNumber: 23
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-center",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 60,
+                columnNumber: 25
+              }
+            }, "From"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-left",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 62,
+                columnNumber: 25
+              }
+            }, " ", singleConference.fromTime))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 68,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 69,
+                columnNumber: 23
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-center",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 70,
+                columnNumber: 25
+              }
+            }, "To"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-left",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 72,
+                columnNumber: 25
+              }
+            }, " ", singleConference.toTime))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+              style: {
+                color: "white"
+              },
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 78,
+                columnNumber: 21
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 79,
+                columnNumber: 23
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-center",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 80,
+                columnNumber: 25
+              }
+            }, "Venue"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+              className: "col-md-6 text-left",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 82,
+                columnNumber: 25
+              }
+            }, " ", singleConference.venue))))))
+          );
+        }))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    approvedConferenceList: state.conferenceReducer.approvedConferenceList
+  });
+  const mapActionToProps = {
+    fetchAllApprovedConferenceList: _actionsConferenceActions.fetchAllApprovedConferenceList
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(ConferenceCard);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

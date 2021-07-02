@@ -1,0 +1,45 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllApprovedWorkshops", function () {
+  return fetchAllApprovedWorkshops;
+});
+_parcelHelpers.export(exports, "fetchAllUnapprovedWorkshops", function () {
+  return fetchAllUnapprovedWorkshops;
+});
+_parcelHelpers.export(exports, "approveWorkshop", function () {
+  return approveWorkshop;
+});
+var _apisWorkshopAPI = require("../apis/WorkshopAPI");
+var _apisWorkshopAPIDefault = _parcelHelpers.interopDefault(_apisWorkshopAPI);
+const ACTION_TYPES = {
+  GET_APPROVED_WORKSHOP_LIST: "GET_APPROVED_WORKSHOP_LIST",
+  GET_UNAPPROVED_WORKSHOP_LIST: "GET_UNAPPROVED_WORKSHOP_LIST",
+  APPROVE_WORKSHOP: "APPROVE_WORKSHOP"
+};
+const fetchAllApprovedWorkshops = () => dispatch => {
+  _apisWorkshopAPIDefault.default.auth().getApprovedWorkshops().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_APPROVED_WORKSHOP_LIST,
+      payload: response.data
+    });
+  });
+};
+const fetchAllUnapprovedWorkshops = () => dispatch => {
+  _apisWorkshopAPIDefault.default.auth().getUnapprovedWorkshops().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_UNAPPROVED_WORKSHOP_LIST,
+      payload: response.data
+    });
+  });
+};
+const approveWorkshop = unapprovedWorkshop => dispatch => {
+  _apisWorkshopAPIDefault.default.auth().ApproveWorkshops(unapprovedWorkshop).then(response => {
+    dispatch({
+      type: ACTION_TYPES.APPROVE_WORKSHOP,
+      payload: response.data
+    });
+  });
+};

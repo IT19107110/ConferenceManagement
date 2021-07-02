@@ -1,0 +1,230 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsLatestNewsActions = require("../../../actions/latestNewsActions");
+  var _reactstrap = require("reactstrap");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\modules\\EditorDashboardModules\\AddLatestNews.js";
+  class AddLatestNews extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onCreateLastestNews = this.onCreateLastestNews.bind(this);
+      this.onValueChange = this.onValueChange.bind(this);
+      this.state = {
+        message: "",
+        hyperlink: "",
+        processStatus: false,
+        processStatusAlert: "",
+        processStatusMessage: ""
+      };
+    }
+    onValueChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onCreateLastestNews(e) {
+      e.preventDefault();
+      this.setState({
+        processStatus: true,
+        processStatusAlert: "alert alert-warning",
+        processStatusMessage: "Please Wait..."
+      });
+      const newLatestNews = {
+        message: this.state.message,
+        hyperlink: this.state.hyperlink,
+        newsDate: new Date()
+      };
+      this.props.addLatestNews(newLatestNews, () => {
+        this.setState({
+          processStatusAlert: "alert alert-success",
+          processStatusMessage: "News Added Successful",
+          message: "",
+          hyperlink: ""
+        });
+      }, () => {
+        this.setState({
+          processStatusAlert: "alert alert-danger",
+          processStatusMessage: "Something went wrong. Please try again.",
+          message: "",
+          hyperlink: ""
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row justify-content-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            width: '40rem'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          style: {
+            textAlign: "center"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76,
+            columnNumber: 13
+          }
+        }, "CREATE LATEST NEWS"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          onSubmit: this.onRegister,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78,
+            columnNumber: 17
+          }
+        }, this.state.processStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.processStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 21
+          }
+        }, this.state.processStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "message",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88,
+            columnNumber: 19
+          }
+        }, "Message"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "textarea",
+          name: "message",
+          id: "message",
+          value: this.state.message,
+          placeholder: "Enter  message",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "hyperlink",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 104,
+            columnNumber: 19
+          }
+        }, "Hyperlink"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "hyperlink",
+          id: "hyperlink",
+          value: this.state.hyperlink,
+          placeholder: "Enter Hyperlink",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          check: true,
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 119,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: {
+            size: 10,
+            offset: 2
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 120,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "btn btn-success",
+          type: "submit",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 121,
+            columnNumber: 21
+          }
+        }, "Submit"))))))))
+      );
+    }
+  }
+  const mapActionToProps = {
+    addLatestNews: _actionsLatestNewsActions.addLatestNews
+  };
+  exports.default = _reactRedux.connect(null, mapActionToProps)(AddLatestNews);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

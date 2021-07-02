@@ -1,0 +1,92 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "KeyNoteSpeakers", function () {
+    return KeyNoteSpeakers;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _actionsWorkshopActions = require("../../../../actions/workshopActions");
+  var _reactRedux = require("react-redux");
+  var _reactstrap = require("reactstrap");
+  var _commonKeynoteCardKeynoteCard = require("../../../common/KeynoteCard/KeynoteCard");
+  var _commonKeynoteCardKeynoteCardDefault = _parcelHelpers.interopDefault(_commonKeynoteCardKeynoteCard);
+  var _NavigationCardNavigationCard = require("../../NavigationCard/NavigationCard");
+  var _NavigationCardNavigationCardDefault = _parcelHelpers.interopDefault(_NavigationCardNavigationCard);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\modules\\HomePageModules\\KeyNoteSpeakers\\KeyNoteSpeakers.js";
+  class KeyNoteSpeakers extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    componentDidMount() {
+      this.props.fetchAllApprovedWorkshops();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Container, {
+          className: "mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          className: "text-white text-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 9
+          }
+        }, "KEYNOTES"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardColumns, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 9
+          }
+        }, this.props.approvedWorkshopList && this.props.approvedWorkshopList.reverse().slice(0, 2).map(singleApprovedWorkshop => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement(_commonKeynoteCardKeynoteCardDefault.default, {
+              workshop: singleApprovedWorkshop,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 25,
+                columnNumber: 24
+              }
+            })
+          );
+        }), this.props.approvedWorkshopList && this.props.approvedWorkshopList.slice(2, 4).map(singleApprovedWorkshop => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement(_NavigationCardNavigationCardDefault.default, {
+              workshop: singleApprovedWorkshop,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32,
+                columnNumber: 24
+              }
+            })
+          );
+        })))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    approvedWorkshopList: state.workshopReducer.approvedWorkshopList
+  });
+  const mapActionToProps = {
+    fetchAllApprovedWorkshops: _actionsWorkshopActions.fetchAllApprovedWorkshops
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(KeyNoteSpeakers);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

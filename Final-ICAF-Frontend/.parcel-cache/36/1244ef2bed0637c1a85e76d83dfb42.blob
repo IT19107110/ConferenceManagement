@@ -1,0 +1,49 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "authReducer", function () {
+  return authReducer;
+});
+var _actionsAuthActions = require("../actions/authActions");
+const user = JSON.parse(localStorage.getItem("user"));
+const initialState = user ? {
+  isLoggedIn: true,
+  user
+} : {
+  isLoggedIn: false,
+  user: null
+};
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _actionsAuthActions.ACTION_TYPES.REGISTER_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: true,
+        user: action.payload
+      };
+    case _actionsAuthActions.ACTION_TYPES.REGISTER_FAIL:
+      return {
+        ...state,
+        isLoggedIn: false
+      };
+    case _actionsAuthActions.ACTION_TYPES.LOGIN_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: true,
+        user: action.payload
+      };
+    case _actionsAuthActions.ACTION_TYPES.LOGIN_FAIL:
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: null
+      };
+    case _actionsAuthActions.ACTION_TYPES.LOGOUT:
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: null
+      };
+    default:
+      return state;
+  }
+};

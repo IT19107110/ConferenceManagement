@@ -1,0 +1,27 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "reviewerReducer", function () {
+  return reviewerReducer;
+});
+var _actionsReviewerActions = require("../actions/reviewerActions");
+const initialState = {
+  reviewerList: [],
+  reviewerListPending: true
+};
+const reviewerReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _actionsReviewerActions.ACTION_TYPES.REVIEWER_LIST:
+      return {
+        ...state,
+        reviewerList: [...action.payload],
+        reviewerListPending: false
+      };
+    case _actionsReviewerActions.ACTION_TYPES.ADD_REVIEWER:
+      return {
+        ...state,
+        reviewerList: [...state.reviewerList, action.payload]
+      };
+    default:
+      return state;
+  }
+};

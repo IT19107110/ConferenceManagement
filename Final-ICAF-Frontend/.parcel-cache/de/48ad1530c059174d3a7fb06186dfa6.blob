@@ -1,0 +1,1 @@
+module.exports = require('./bundle-url').getBundleURL() + "sliit2.HASH_REF_f57ba61a74d94b9c4996131b3918c25c.svg"

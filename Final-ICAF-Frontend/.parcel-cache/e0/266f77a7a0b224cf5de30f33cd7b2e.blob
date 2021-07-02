@@ -1,0 +1,25 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+var _authHeader = require("./authHeader");
+var _authHeaderDefault = _parcelHelpers.interopDefault(_authHeader);
+const baseUrl = "http://localhost:5000";
+const config = {
+  headers: _authHeaderDefault.default()
+};
+const newsApi = {
+  latestNews() {
+    return {
+      addLatestNews: newNews => _axiosDefault.default.post(baseUrl + "/api/LatestNews", newNews, config),
+      getAllNews: () => _axiosDefault.default.get(baseUrl + "/api/LatestNews"),
+      getAllApprovedNews: () => _axiosDefault.default.get(baseUrl + "/api/LatestNews/approved"),
+      getAllUnapprovedNews: () => _axiosDefault.default.get(baseUrl + "/api/LatestNews/unapproved", config),
+      approveNews: (id, newObj) => _axiosDefault.default.get(baseUrl + "/api/LatestNews/approveLatestNews/" + id, newObj, config),
+      deleteLatestNews: id => {
+        _axiosDefault.default.delete(baseUrl + "/api/LatestNews/" + id);
+      }
+    };
+  }
+};
+exports.default = newsApi;

@@ -1,0 +1,23 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "storage", function () {
+  return storage;
+});
+_parcelHelpers.export(exports, "default", function () {
+  return _firebaseAppDefault.default;
+});
+var _firebaseApp = require("firebase/app");
+var _firebaseAppDefault = _parcelHelpers.interopDefault(_firebaseApp);
+require("firebase/storage");
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCTfcI41rfLYDXFd_mMkgKHmU6Vp9EzrRs",
+  authDomain: "icafsl.firebaseapp.com",
+  projectId: "icafsl",
+  storageBucket: "icafsl.appspot.com",
+  messagingSenderId: "65440105589",
+  appId: "1:65440105589:web:e0c6de6b8457e1cfc4643c"
+};
+// Initialize Firebase
+_firebaseAppDefault.default.initializeApp(firebaseConfig);
+const storage = _firebaseAppDefault.default.storage();

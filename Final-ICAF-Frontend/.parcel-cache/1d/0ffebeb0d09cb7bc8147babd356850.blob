@@ -1,0 +1,265 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactstrap = require('reactstrap');
+  var _reactBootstrapImage = require('react-bootstrap/Image');
+  var _reactBootstrapImageDefault = _parcelHelpers.interopDefault(_reactBootstrapImage);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\pages\\ProfilePage\\ProfilePage.js", _s = $RefreshSig$();
+  function ProfilePage(props) {
+    _s();
+    const {buttonLabel, className} = props;
+    const [modal, setModal] = _react.useState(false);
+    const [closeAll, setCloseAll] = _react.useState(false);
+    const toggle = () => setModal(!modal);
+    const toggleNested = () => {
+      setCloseAll(false);
+    };
+    const toggleAll = () => {
+      setCloseAll(true);
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+        color: "danger",
+        onClick: toggle,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27,
+          columnNumber: 13
+        }
+      }, buttonLabel), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Modal, {
+        isOpen: modal,
+        toggle: toggle,
+        className: className,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.ModalHeader, {
+        toggle: toggle,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 21
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.ModalBody, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 21
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "container",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31,
+          columnNumber: 25
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 29
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "col-sm-5",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33,
+          columnNumber: 33
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapImageDefault.default, {
+        src: "https://i2.wp.com/worldbusinessfitness.com/wp-content/uploads/2018/01/opulent-profile-square-07.jpg?ssl=1",
+        rounded: true,
+        style: {
+          height: "150px"
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34,
+          columnNumber: 37
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "col-sm-7",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36,
+          columnNumber: 33
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row ml-1",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37,
+          columnNumber: 37
+        }
+      }, "He/Him"), /*#__PURE__*/_reactDefault.default.createElement("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 37
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("b", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 41
+        }
+      }, "Daco Harkes")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row ml-1",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 37
+        }
+      }, "Student"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row ml-1",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44,
+          columnNumber: 37
+        }
+      }, "SLIIT"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row mt-5",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51,
+          columnNumber: 29
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52,
+          columnNumber: 33
+        }
+      }, "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row mt-5",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56,
+          columnNumber: 29
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "col-sm-8 ",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57,
+          columnNumber: 33
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58,
+          columnNumber: 37
+        }
+      }, "Email"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61,
+          columnNumber: 37
+        }
+      }, "lasalshettiarachchi@gmail.com")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "col-sm-4 ",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66,
+          columnNumber: 33
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67,
+          columnNumber: 37
+        }
+      }, "Contact number"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70,
+          columnNumber: 37
+        }
+      }, "+940764694432"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row mt-5",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75,
+          columnNumber: 29
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Alert, {
+        color: "danger",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76,
+          columnNumber: 33
+        }
+      }, "Intoduction to flutter"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Alert, {
+        color: "danger",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80,
+          columnNumber: 33
+        }
+      }, "Intoduction to flutter"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Alert, {
+        color: "danger",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 33
+        }
+      }, "Intoduction to flutter"))))))
+    );
+  }
+  exports.default = ProfilePage;
+  _s(ProfilePage, "JKFJ7MUysriJNgUi75ESFKOOFRQ=");
+  _c = ProfilePage;
+  var _c;
+  $RefreshReg$(_c, "ProfilePage");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

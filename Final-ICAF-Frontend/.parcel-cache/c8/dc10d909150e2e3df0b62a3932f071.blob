@@ -1,0 +1,1 @@
+module.exports = require('./bundle-url').getBundleURL() + "image2vector.HASH_REF_8348a6551aae293f9921a1093969b804.svg"

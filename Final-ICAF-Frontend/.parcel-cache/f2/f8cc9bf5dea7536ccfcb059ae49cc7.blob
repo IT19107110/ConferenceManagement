@@ -1,0 +1,46 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllResearchers", function () {
+  return fetchAllResearchers;
+});
+_parcelHelpers.export(exports, "fetchSpecificResearchers", function () {
+  return fetchSpecificResearchers;
+});
+_parcelHelpers.export(exports, "approveReasearcherPayment", function () {
+  return approveReasearcherPayment;
+});
+var _apisReasearcherAPI = require("../apis/ReasearcherAPI");
+var _apisReasearcherAPIDefault = _parcelHelpers.interopDefault(_apisReasearcherAPI);
+const ACTION_TYPES = {
+  RESEARCHER_LIST: "RESEARCHER_LIST",
+  GET_SPECIFIC_RESEARCHER_DETAILS: "GET_SPECIFIC_RESEARCHER_DETAILS",
+  APPROVE_REASEARCHER_PAYMENT: "APPROVE_REASEARCHER_PAYMENT"
+};
+const fetchAllResearchers = () => dispatch => {
+  _apisReasearcherAPIDefault.default.auth().getAllResearches().then(response => {
+    dispatch({
+      type: ACTION_TYPES.RESEARCHER_LIST,
+      payload: response.data
+    });
+  });
+};
+const fetchSpecificResearchers = () => dispatch => {
+  _apisReasearcherAPIDefault.default.auth().getSpecificResearches().then(response => {
+    dispatch({
+      type: ACTION_TYPES.GET_SPECIFIC_RESEARCHER_DETAILS,
+      payload: response.data
+    });
+  });
+};
+const approveReasearcherPayment = paymentToBeApproved => dispatch => {
+  console.log(paymentToBeApproved);
+  _apisReasearcherAPIDefault.default.auth().approveReasearcherPayment(paymentToBeApproved).then(response => {
+    dispatch({
+      type: ACTION_TYPES.APPROVE_REASEARCHER_PAYMENT,
+      payload: response.data
+    });
+  });
+};

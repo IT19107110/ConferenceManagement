@@ -1,0 +1,20 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+var _authHeader = require("./authHeader");
+var _authHeaderDefault = _parcelHelpers.interopDefault(_authHeader);
+const baseUrl = "http://localhost:5000";
+const config = {
+  headers: _authHeaderDefault.default()
+};
+const workshopApi = {
+  auth() {
+    return {
+      getApprovedWorkshops: () => _axiosDefault.default.get(baseUrl + "/api/Workshops/approved"),
+      getUnapprovedWorkshops: () => _axiosDefault.default.get(baseUrl + "/api/Workshops/unapproved", config),
+      ApproveWorkshops: Workshops => _axiosDefault.default.put(baseUrl + "/api/Workshops/approveWorkshop", Workshops, config)
+    };
+  }
+};
+exports.default = workshopApi;

@@ -1,0 +1,22 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+var _authHeader = require("./authHeader");
+var _authHeaderDefault = _parcelHelpers.interopDefault(_authHeader);
+const baseUrl = "http://localhost:5000";
+const config = {
+  headers: _authHeaderDefault.default()
+};
+const authReasearcherApi = {
+  auth() {
+    return {
+      register: newReasearcher => _axiosDefault.default.post(baseUrl + "/api/authResearcher/register", newReasearcher),
+      login: loginReasearcher => _axiosDefault.default.post(baseUrl + "/api/authResearcher", loginReasearcher),
+      getAllResearches: () => _axiosDefault.default.get(baseUrl + "/api/authResearcher/all", config),
+      getSpecificResearches: () => _axiosDefault.default.get(baseUrl + "/api/authResearcher", config),
+      approveReasearcherPayment: paymentToBeApproved => _axiosDefault.default.put(baseUrl + "/api/authResearcher/approvePayment", config)
+    };
+  }
+};
+exports.default = authReasearcherApi;

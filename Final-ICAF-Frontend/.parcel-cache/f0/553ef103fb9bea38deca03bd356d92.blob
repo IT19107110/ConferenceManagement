@@ -1,0 +1,197 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "Editor", function () {
+    return Editor;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _AddConference = require("./AddConference");
+  var _AddConferenceDefault = _parcelHelpers.interopDefault(_AddConference);
+  var _AddLatestNews = require("./AddLatestNews");
+  var _AddLatestNewsDefault = _parcelHelpers.interopDefault(_AddLatestNews);
+  var _AddTemplates = require("./AddTemplates");
+  var _AddTemplatesDefault = _parcelHelpers.interopDefault(_AddTemplates);
+  var _ConferenceCard = require("./ConferenceCard");
+  var _ConferenceCardDefault = _parcelHelpers.interopDefault(_ConferenceCard);
+  var _LatestNewsTable = require("./LatestNewsTable");
+  var _LatestNewsTableDefault = _parcelHelpers.interopDefault(_LatestNewsTable);
+  var _TemplateTable = require("./TemplateTable");
+  var _TemplateTableDefault = _parcelHelpers.interopDefault(_TemplateTable);
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\EditorDashboardModules\\Editor.js";
+  class Editor extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 9
+          }
+        }, "EDITOR DASHBOARD", /*#__PURE__*/_reactDefault.default.createElement("hr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-6",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 11
+          }
+        }, "CONFERENCE DETAILS"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_AddConferenceDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 13
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_ConferenceCardDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 13
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-6",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 11
+          }
+        }, "LATEST NEWS"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-md-12",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_AddLatestNewsDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 13
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-md-12",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_LatestNewsTableDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 13
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          className: "text-center text-white mt-5 mb-5 display-6",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 11
+          }
+        }, "TEMPLATES"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-md-12",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_AddTemplatesDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 13
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-md-12",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_TemplateTableDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 13
+          }
+        }))))
+      );
+    }
+  }
+  exports.default = Editor;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

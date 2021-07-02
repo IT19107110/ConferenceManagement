@@ -1,0 +1,294 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRedux = require("react-redux");
+  var _actionsEditorActions = require("../../../../actions/editorActions");
+  var _reactstrap = require("reactstrap");
+  require("@material-ui/core");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\AF_Final\\AF_Frontend\\ICAF-Frontend-main\\src\\modules\\AdminPageModules\\AdminEditorModule\\CreateEditor.js";
+  class CreateEditor extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onRegister = this.onRegister.bind(this);
+      this.onValueChange = this.onValueChange.bind(this);
+      this.state = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        processStatus: false,
+        processStatusAlert: "",
+        processStatusMessage: ""
+      };
+    }
+    onValueChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onRegister(e) {
+      e.preventDefault();
+      this.setState({
+        processStatus: true,
+        processStatusAlert: "alert alert-warning",
+        processStatusMessage: "Please Wait..."
+      });
+      const registerEditorObj = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        password: this.state.password
+      };
+      this.props.editorRegister(registerEditorObj, () => {
+        this.setState({
+          processStatusAlert: "alert alert-success",
+          processStatusMessage: "Editor Registered successfully",
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: ""
+        });
+      }, () => {
+        this.setState({
+          processStatusAlert: "alert alert-danger",
+          processStatusMessage: "Something went wrong. Please try again."
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row justify-content-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            width: '40rem'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          style: {
+            textAlign: "center"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 13
+          }
+        }, "CREATE EDITOR"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Form, {
+          onSubmit: this.onRegister,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 17
+          }
+        }, this.state.processStatus ? /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: this.state.processStatusAlert,
+          role: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 21
+          }
+        }, this.state.processStatusMessage) : ""), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "firstName",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92,
+            columnNumber: 19
+          }
+        }, "First Name"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "firstName",
+          id: "firstName",
+          value: this.state.firstName,
+          placeholder: "Enter First Name",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "lastName",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108,
+            columnNumber: 19
+          }
+        }, "Last Name"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "text",
+          name: "lastName",
+          id: "lastName",
+          value: this.state.lastName,
+          placeholder: "Enter Last Name",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 123,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "email",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124,
+            columnNumber: 19
+          }
+        }, "Email"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "email",
+          name: "email",
+          id: "email",
+          value: this.state.email,
+          placeholder: "Enter email",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 127,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 139,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Label, {
+          for: "password",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 140,
+            columnNumber: 19
+          }
+        }, "Password"), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Input, {
+          type: "password",
+          name: "password",
+          id: "password",
+          value: this.state.password,
+          placeholder: "Enter Password",
+          onChange: e => {
+            this.onValueChange(e);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 143,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.FormGroup, {
+          check: true,
+          row: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 155,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Col, {
+          sm: {
+            size: 40,
+            offset: 4
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 156,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "btn btn-dark",
+          type: "submit",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 157,
+            columnNumber: 21
+          }
+        }, "Submit"))))))))
+      );
+    }
+  }
+  const mapActionToProps = {
+    editorRegister: _actionsEditorActions.editorRegister
+  };
+  exports.default = _reactRedux.connect(null, mapActionToProps)(CreateEditor);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

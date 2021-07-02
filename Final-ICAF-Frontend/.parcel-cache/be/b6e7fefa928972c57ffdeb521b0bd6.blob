@@ -1,0 +1,22 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "presenterReducer", function () {
+  return presenterReducer;
+});
+var _actionsPresenterActions = require("../actions/presenterActions");
+const initialState = {
+  presenterList: [],
+  presenterListPending: true
+};
+const presenterReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _actionsPresenterActions.ACTION_TYPES.PRESENTER_LIST:
+      return {
+        ...state,
+        presenterList: [...action.payload],
+        presenterListPending: false
+      };
+    default:
+      return state;
+  }
+};

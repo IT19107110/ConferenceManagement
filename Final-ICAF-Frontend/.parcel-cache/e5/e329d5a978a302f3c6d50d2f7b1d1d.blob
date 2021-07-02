@@ -1,0 +1,185 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "ReviewerTable", function () {
+    return ReviewerTable;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactstrap = require("reactstrap");
+  var _actionsReviewerActions = require("../../../../actions/reviewerActions");
+  var _reactRedux = require("react-redux");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\AdminPageModules\\AdminReviewerModule\\ReviewerTable.js";
+  class ReviewerTable extends _react.Component {
+    componentDidMount() {
+      this.props.fetchAllReviewers();
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            maxHeight: "390px",
+            overflowY: "auto"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "table-responsive",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 16
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("table", {
+          class: "table table-striped text-center my-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("thead", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          class: "table-dark",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 23
+          }
+        }, "ID"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 23
+          }
+        }, "First Name"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 23
+          }
+        }, "Last Name"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 23
+          }
+        }, "Username"))), /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 19
+          }
+        }, this.props.reviewerList && this.props.reviewerList.map((singleReviewer, index) => {
+          return (
+            /*#__PURE__*/_reactDefault.default.createElement("tr", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 37,
+                columnNumber: 25
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+              scope: "row",
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 38,
+                columnNumber: 27
+              }
+            }, index), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 39,
+                columnNumber: 27
+              }
+            }, singleReviewer.firstName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 40,
+                columnNumber: 27
+              }
+            }, singleReviewer.lastName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41,
+                columnNumber: 27
+              }
+            }, singleReviewer.email))
+          );
+        })))))))))
+      );
+    }
+  }
+  const mapStateToProps = state => ({
+    user: state.authReducer.user,
+    reviewerList: state.reviewerReducer.reviewerList
+  });
+  const mapActionToProps = {
+    fetchAllReviewers: _actionsReviewerActions.fetchAllReviewers
+  };
+  exports.default = _reactRedux.connect(mapStateToProps, mapActionToProps)(ReviewerTable);
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

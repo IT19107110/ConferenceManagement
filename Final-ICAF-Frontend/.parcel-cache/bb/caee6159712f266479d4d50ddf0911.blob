@@ -1,0 +1,141 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "NavigationCard", function () {
+    return NavigationCard;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactstrap = require("reactstrap");
+  var _reactIconsFa = require("react-icons/fa");
+  var _reactIconsBs = require("react-icons/bs");
+  var _reactIconsCg = require("react-icons/cg");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\NavigationCard\\NavigationCard.js";
+  class NavigationCard extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            borderRadius: "20px",
+            backgroundColor: "#21012B",
+            marginLeft: "20px",
+            marginTop: "25px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardTitle, {
+          tag: "h5",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 13
+          }
+        }, this.props.workshop.workshop.workshopName), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardText, {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 13
+          }
+        }, this.props.workshop.workshop.description), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "bg-transparent border-0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          href: this.props.workshop.workshop.fileLink,
+          target: "_blank",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsFa.FaRegFilePowerpoint, {
+          color: "white",
+          fontSize: "1.75em",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 17
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "bg-transparent border-0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsBs.BsCalendar, {
+          color: "white",
+          fontSize: "1.5em",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 15
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Button, {
+          className: "bg-transparent border-0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactIconsCg.CgProfile, {
+          color: "white",
+          fontSize: "1.7em",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 15
+          }
+        })))))
+      );
+    }
+  }
+  exports.default = NavigationCard;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

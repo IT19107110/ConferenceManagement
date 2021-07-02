@@ -1,0 +1,209 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _urlAssetsSliit1Svg = require("url:../../../assets/sliit1.svg");
+  var _urlAssetsSliit1SvgDefault = _parcelHelpers.interopDefault(_urlAssetsSliit1Svg);
+  var _urlAssetsSliit2Svg = require("url:../../../assets/sliit2.svg");
+  var _urlAssetsSliit2SvgDefault = _parcelHelpers.interopDefault(_urlAssetsSliit2Svg);
+  var _urlAssetsSliit3Svg = require("url:../../../assets/sliit3.svg");
+  var _urlAssetsSliit3SvgDefault = _parcelHelpers.interopDefault(_urlAssetsSliit3Svg);
+  var _urlAssetsBlurSvg = require("url:../../../assets/blur.svg");
+  var _urlAssetsBlurSvgDefault = _parcelHelpers.interopDefault(_urlAssetsBlurSvg);
+  require("./GetInTouch.css");
+  var _reactstrap = require("reactstrap");
+  var _jsxFileName = "C:\\Users\\Soujia\\Desktop\\New folder\\Final_AF\\Final-ICAF-Frontend\\src\\modules\\HomePageModules\\GetInTouchSection\\GetInTouch.js";
+  class GetInTouch extends _react.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          className: "mt-3 text-center conferenceDateDiv3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 9
+          }
+        }, "Event Venue"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-6  mt-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("iframe", {
+          className: "googleMapDiv",
+          frameBorder: "0",
+          scrolling: "no",
+          marginheight: "0",
+          marginwidth: "0",
+          id: "gmap_canvas",
+          src: "https://maps.google.com/maps?width=302&height=383&hl=en&q=SLIIT%20Colombo+()&t=&z=12&ie=UTF8&iwloc=B&output=embed",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("script", {
+          type: "text/javascript",
+          src: "https://embedmaps.com/google-maps-authorization/script.js?id=9d0b336a328f9dc4c3b799ea47ad1637cd93b6d0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 13
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-6 mt-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.Card, {
+          style: {
+            backgroundImage: `url(${_urlAssetsBlurSvgDefault.default})`,
+            margin: "20px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactstrap.CardBody, {
+          className: "p-5 ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          className: "mt-3 text-center text-light",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 17
+          }
+        }, "THE NEXT YOU"), /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          className: "mt-3 text-center text-light",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 15
+          }
+        }, "SLIIT IS YOUR BEST DIRECTION"))))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-4  mt-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+          src: _urlAssetsSliit1SvgDefault.default,
+          className: "img-fluid",
+          alt: "aboutImg",
+          style: {
+            width: "300px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-4 mt-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+          src: _urlAssetsSliit2SvgDefault.default,
+          className: "img-fluid",
+          alt: "AboutImg2",
+          style: {
+            width: "300px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "col-lg-4 mt-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+          src: _urlAssetsSliit3SvgDefault.default,
+          className: "img-fluid",
+          alt: "AboutImg3",
+          style: {
+            width: "300px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 11
+          }
+        }))))
+      );
+    }
+  }
+  exports.default = GetInTouch;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

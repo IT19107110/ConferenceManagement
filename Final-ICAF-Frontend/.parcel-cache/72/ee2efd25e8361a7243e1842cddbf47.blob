@@ -1,0 +1,23 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+var _authHeader = require("./authHeader");
+var _authHeaderDefault = _parcelHelpers.interopDefault(_authHeader);
+const baseUrl = "http://localhost:5000";
+const config = {
+  headers: _authHeaderDefault.default()
+};
+const ConferenceDetailsApi = {
+  conference() {
+    return {
+      getAllConferenceDetails: () => _axiosDefault.default.get(baseUrl + "/api/conference"),
+      getApprovedConferenceDetails: () => _axiosDefault.default.get(baseUrl + "/api/conference/approved"),
+      getUnapprovedConferenceDetails: () => _axiosDefault.default.get(baseUrl + "/api/conference/unapproved"),
+      addConferenceDetails: newConference => _axiosDefault.default.post(baseUrl + "/api/conference", newConference, config),
+      approveConferenceDetailsByAdmin: (id, approveConference) => _axiosDefault.default.put(baseUrl + "/api/conference/approveconference/" + id, approveConference, config),
+      updateConferenceDetailsByEditor: (id, updateConference) => _axiosDefault.default.put(baseUrl + "/api/conference/" + id, updateConference, config)
+    };
+  }
+};
+exports.default = ConferenceDetailsApi;

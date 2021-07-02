@@ -1,0 +1,22 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "attendeeReducer", function () {
+  return attendeeReducer;
+});
+var _actionsAttendeeActions = require("../actions/attendeeActions");
+const initialState = {
+  attendeeList: [],
+  attendeeListPending: true
+};
+const attendeeReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _actionsAttendeeActions.ACTION_TYPES.ATTENDEE_LIST:
+      return {
+        ...state,
+        attendeeList: [...action.payload],
+        attendeeListPending: false
+      };
+    default:
+      return state;
+  }
+};

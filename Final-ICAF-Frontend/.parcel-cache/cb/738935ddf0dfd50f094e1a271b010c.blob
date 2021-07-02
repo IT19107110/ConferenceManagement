@@ -1,0 +1,21 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "fetchAllAttendees", function () {
+  return fetchAllAttendees;
+});
+var _apisAttendeeAPI = require("../apis/AttendeeAPI");
+var _apisAttendeeAPIDefault = _parcelHelpers.interopDefault(_apisAttendeeAPI);
+const ACTION_TYPES = {
+  ATTENDEE_LIST: "ATTENDEE_LIST"
+};
+const fetchAllAttendees = () => dispatch => {
+  _apisAttendeeAPIDefault.default.auth().getAllAttendees().then(response => {
+    dispatch({
+      type: ACTION_TYPES.ATTENDEE_LIST,
+      payload: response.data
+    });
+  });
+};

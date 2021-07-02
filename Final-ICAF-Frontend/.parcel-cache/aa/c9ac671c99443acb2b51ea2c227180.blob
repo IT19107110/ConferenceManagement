@@ -1,0 +1,22 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+var _authHeader = require("./authHeader");
+var _authHeaderDefault = _parcelHelpers.interopDefault(_authHeader);
+const baseUrl = "http://localhost:5000";
+const config = {
+  headers: _authHeaderDefault.default()
+};
+const templateApi = {
+  auth() {
+    return {
+      addTemplate: newTemplate => _axiosDefault.default.post(baseUrl + "/api/Templates", newTemplate, config),
+      viewTemplate: () => _axiosDefault.default.get(baseUrl + "/api/Templates"),
+      deleteTemplate: id => _axiosDefault.default.delete(baseUrl + "/api/Templates/" + id, config),
+      approveTemplate: (id, approveObj) => _axiosDefault.default.put(baseUrl + "/api/Templates/approve/" + id, approveObj, config),
+      viewTemplateApproved: () => _axiosDefault.default.get(baseUrl + "/api/Templates/approved")
+    };
+  }
+};
+exports.default = templateApi;

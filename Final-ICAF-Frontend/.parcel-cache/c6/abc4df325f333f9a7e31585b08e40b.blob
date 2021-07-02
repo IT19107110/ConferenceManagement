@@ -1,0 +1,14 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+const baseUrl = "http://localhost:5000";
+const authAdminApi = {
+  auth() {
+    return {
+      register: newAdmin => _axiosDefault.default.post(baseUrl + "/api/authadmin/register", newAdmin),
+      login: loginAdmin => _axiosDefault.default.post(baseUrl + "/api/authadmin", loginAdmin)
+    };
+  }
+};
+exports.default = authAdminApi;

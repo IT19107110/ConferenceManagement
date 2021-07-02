@@ -1,0 +1,38 @@
+body {
+  background-image: linear-gradient(
+    to right top,
+    #0c4e5a,
+    #0a5e77,
+    #0d688b,
+    #1082af,
+    #58b3e7,
+    #a1d9fa
+  );
+}
+
+/*Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hrTopic {
+  width: 20%;
+  color: rgb(187, 100, 0);
+}

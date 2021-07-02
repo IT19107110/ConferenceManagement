@@ -1,0 +1,20 @@
+.navLinkTab {
+  font-weight: bolder;
+}
+
+.navLinkLeft {
+  margin-right: 10%;
+}
+/* body { padding-top: 20px; } */
+.bg-light {
+  border-bottom: 4px solid #dddede;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/* .navbar + nav{
+margin-top:25px;
+margin-bottom:5px;
+} */
+

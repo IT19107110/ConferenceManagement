@@ -1,0 +1,10 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "store", function () {
+  return store;
+});
+var _redux = require("redux");
+var _reduxThunk = require("redux-thunk");
+var _reduxThunkDefault = _parcelHelpers.interopDefault(_reduxThunk);
+var _reducers = require("../reducers");
+const store = _redux.createStore(_reducers.reducers, _redux.compose(_redux.applyMiddleware(_reduxThunkDefault.default)));

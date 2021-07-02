@@ -1,0 +1,298 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "ACTION_TYPES", function () {
+  return ACTION_TYPES;
+});
+_parcelHelpers.export(exports, "adminRegister", function () {
+  return adminRegister;
+});
+_parcelHelpers.export(exports, "loginAdmin", function () {
+  return loginAdmin;
+});
+_parcelHelpers.export(exports, "editorLogin", function () {
+  return editorLogin;
+});
+_parcelHelpers.export(exports, "loginReviewer", function () {
+  return loginReviewer;
+});
+_parcelHelpers.export(exports, "presenterRegister", function () {
+  return presenterRegister;
+});
+_parcelHelpers.export(exports, "presenterLogin", function () {
+  return presenterLogin;
+});
+_parcelHelpers.export(exports, "ReasearcherRegister", function () {
+  return ReasearcherRegister;
+});
+_parcelHelpers.export(exports, "ReasearcherLogin", function () {
+  return ReasearcherLogin;
+});
+_parcelHelpers.export(exports, "logout", function () {
+  return logout;
+});
+_parcelHelpers.export(exports, "attendeeRegister", function () {
+  return attendeeRegister;
+});
+_parcelHelpers.export(exports, "loginAttendee", function () {
+  return loginAttendee;
+});
+var _apisAdminAPI = require("../apis/AdminAPI");
+var _apisAdminAPIDefault = _parcelHelpers.interopDefault(_apisAdminAPI);
+var _apisEditorAPI = require("../apis/EditorAPI");
+var _apisEditorAPIDefault = _parcelHelpers.interopDefault(_apisEditorAPI);
+var _apisReviewerAPI = require("../apis/ReviewerAPI");
+var _apisReviewerAPIDefault = _parcelHelpers.interopDefault(_apisReviewerAPI);
+var _apisPresenterAPI = require("../apis/PresenterAPI");
+var _apisPresenterAPIDefault = _parcelHelpers.interopDefault(_apisPresenterAPI);
+var _apisAttendeeAPI = require("../apis/AttendeeAPI");
+var _apisAttendeeAPIDefault = _parcelHelpers.interopDefault(_apisAttendeeAPI);
+var _apisReasearcherAPI = require("../apis/ReasearcherAPI");
+var _apisReasearcherAPIDefault = _parcelHelpers.interopDefault(_apisReasearcherAPI);
+const ACTION_TYPES = {
+  REGISTER_SUCCESS: "REGISTER_SUCCESS",
+  REGISTER_FAIL: "REGISTER_FAIL",
+  LOGIN_SUCCESS: "LOGIN_SUCCESS",
+  LOGIN_FAIL: "LOGIN_FAIL",
+  LOGOUT: "LOGOUT"
+};
+const adminRegister = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisAdminAPIDefault.default.auth().register(data).then(response => {
+    const user = {
+      role: "admin",
+      email: data.email,
+      token: response.data.token
+    };
+    dispatch({
+      type: ACTION_TYPES.REGISTER_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.REGISTER_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const loginAdmin = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisReviewerAPIDefault.default.auth().login(data).then(response => {
+    const user = {
+      role: "admin",
+      email: data.email,
+      token: response.data.token
+    };
+    console.log(user);
+    dispatch({
+      type: ACTION_TYPES.LOGIN_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.LOGIN_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const editorLogin = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisEditorAPIDefault.default.auth().login(data).then(response => {
+    const user = {
+      role: "editor",
+      email: data.email,
+      token: response.data.token
+    };
+    console.log(user);
+    dispatch({
+      type: ACTION_TYPES.LOGIN_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.LOGIN_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const loginReviewer = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisReviewerAPIDefault.default.auth().login(data).then(response => {
+    const user = {
+      role: "reviewer",
+      email: data.email,
+      token: response.data.token
+    };
+    console.log(user);
+    dispatch({
+      type: ACTION_TYPES.LOGIN_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.LOGIN_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const presenterRegister = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisPresenterAPIDefault.default.auth().register(data).then(response => {
+    const user = {
+      role: "presenter",
+      email: data.email,
+      token: response.data.token
+    };
+    dispatch({
+      type: ACTION_TYPES.REGISTER_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.REGISTER_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const presenterLogin = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisPresenterAPIDefault.default.auth().login(data).then(response => {
+    const user = {
+      role: "presenter",
+      email: data.email,
+      token: response.data.token
+    };
+    dispatch({
+      type: ACTION_TYPES.LOGIN_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.LOGIN_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const ReasearcherRegister = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisReasearcherAPIDefault.default.auth().register(data).then(response => {
+    const user = {
+      role: "researcher",
+      email: data.email,
+      token: response.data.token
+    };
+    dispatch({
+      type: ACTION_TYPES.REGISTER_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.REGISTER_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const ReasearcherLogin = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisReasearcherAPIDefault.default.auth().login(data).then(response => {
+    const user = {
+      role: "researcher",
+      email: data.email,
+      token: response.data.token
+    };
+    dispatch({
+      type: ACTION_TYPES.LOGIN_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.LOGIN_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const logout = () => dispatch => {
+  localStorage.removeItem("user");
+  dispatch({
+    type: ACTION_TYPES.LOGOUT
+  });
+  window.location = "/";
+};
+const attendeeRegister = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisAttendeeAPIDefault.default.auth().register(data).then(response => {
+    const user = {
+      role: "attendee",
+      email: data.email,
+      token: response.data.token
+    };
+    dispatch({
+      type: ACTION_TYPES.REGISTER_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.REGISTER_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};
+const loginAttendee = (data, OnSuccess, OnFailure) => dispatch => {
+  _apisAttendeeAPIDefault.default.auth().login(data).then(response => {
+    const user = {
+      role: "attendee",
+      email: data.email,
+      token: response.data.token
+    };
+    console.log(user);
+    dispatch({
+      type: ACTION_TYPES.LOGIN_SUCCESS,
+      payload: user
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    OnSuccess();
+  }).catch(() => {
+    dispatch({
+      type: ACTION_TYPES.LOGIN_FAIL,
+      payload: null
+    });
+    OnFailure();
+  });
+};

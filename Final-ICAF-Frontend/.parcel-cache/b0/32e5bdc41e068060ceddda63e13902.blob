@@ -1,0 +1,53 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "conferenceReducer", function () {
+  return conferenceReducer;
+});
+var _actionsConferenceActions = require("../actions/conferenceActions");
+const initialState = {
+  conferenceList: [],
+  conferenceListPending: true,
+  approvedConferenceList: [],
+  approvedConferenceListPending: true,
+  unapprovedConferenceList: [],
+  unapprovedConferenceListPending: true
+};
+const conferenceReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _actionsConferenceActions.ACTION_TYPES.FETCH_ALL_CONFERENCE_LIST:
+      return {
+        ...state,
+        conferenceList: [...action.payload],
+        conferenceListPending: false
+      };
+    case _actionsConferenceActions.ACTION_TYPES.APPROVED_CONFERENCE_LIST:
+      return {
+        ...state,
+        approvedConferenceList: [...action.payload],
+        approvedConferenceListPending: false
+      };
+    case _actionsConferenceActions.ACTION_TYPES.UNAPPROVED_CONFERENCE_LIST:
+      return {
+        ...state,
+        unapprovedConferenceList: [...action.payload],
+        unapprovedConferenceListPending: false
+      };
+    case _actionsConferenceActions.ACTION_TYPES.APPROVE_CONFERENCE_ADMIN:
+      return {
+        ...state,
+        conferenceList: state.conferenceList.map(x => x._id === action.payload._id ? action.payload : x)
+      };
+    case _actionsConferenceActions.ACTION_TYPES.UPDATE_CONFERENCE:
+      return {
+        ...state,
+        conferenceList: state.conferenceList.map(x => x.id === action.payload.id ? action.payload : x)
+      };
+    case _actionsConferenceActions.ACTION_TYPES.ADD_CONFERENCE:
+      return {
+        ...state,
+        conferenceList: [...state.conferenceList, action.payload]
+      };
+    default:
+      return state;
+  }
+};
