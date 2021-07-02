@@ -1,0 +1,5 @@
+{
+    "mongoURL": "mongodb+srv://affinal1234:affinal1234@cluster0.zzyhf.mongodb.net/finalDatabase?retryWrites=true&w=majority",
+  
+    "jwtSecret": "mysecrettoken"
+}
