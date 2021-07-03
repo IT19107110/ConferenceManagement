@@ -49,7 +49,8 @@ class ReviewerDashboard extends Component {
           </h3>
         </div>
         <div className="row mt-5 container">
-          <div className="col-sm-8 ">
+          <div className="col-sm-8 text-center text-light">
+              <h3>Workshops</h3>
               <Card style={{ borderRadius: "20px",backgroundColor:"#21012B",margin:"20px"}}>
                   <CardBody style={{ padding:"75px"}}>
                       {this.props.unapprovedWorkshopList &&
@@ -89,7 +90,8 @@ class ReviewerDashboard extends Component {
         </div>
 
         <div className="row mt-5 container">
-          <div className="col-sm-8 ">
+          <div className="col-sm-8 text-center text-light">
+          <h3>Research Papers</h3>
               <Card style={{ borderRadius: "20px",backgroundColor:"#21012B",margin:"20px"}}>
                   <CardBody style={{ padding:"75px"}}>
                       {this.props.unapprovedReasearchPaperList &&

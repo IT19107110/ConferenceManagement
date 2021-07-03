@@ -17,10 +17,10 @@ export class AdminConferenceDetailsCard extends Component {
         >
           <CardBody>
             <CardTitle tag="h5" style={{ color: "white" }}>
-              Introduction to flutter
+              Introduction to Application Framework
             </CardTitle>
             <CardText style={{ color: "white" }}>
-             This Shows the Infromation About Conference. You can get Breifly know about Conference
+             This Shows the Infromation About Application Framework. You can get Breifly know about ICAF Conference
             </CardText>
 
             <Button className="bg-transparent border-0">

@@ -16,18 +16,18 @@ export default class Footer extends Component {
             <div className="head1">CONTACT US</div>
             <p className="bdr"></p>
             
-              <h2 className="text">
+              <h5 className="text">
 Department of Software Engineering, Faculty of Computing, SLIIT, Sri Lanka
 
-              </h2>
-              <h2 className="text">
+              </h5>
+              <h5 className="text">
 Telephone: +94 77 688 7978, Email: icaf@sliit.lk
-              </h2>
+              </h5>
               <div>
                 <p>
                   {" "}
                   <small className="follow-text">
-                    FOLLOW US ON SOCIAL MEDIA
+                    FOLLOW US ON 
                   </small>{" "}
                   <label className="footer-right">
                     {" "}

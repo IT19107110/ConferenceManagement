@@ -24,21 +24,18 @@ export class AdminTemplatesTable extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Henry</td>
-                      <td>James</td>
+                      <td>Express js</td>
+                      <td>https://www.google.com/search?q=tech+workshop&oq=tech+workshop&aqs=chrome.0.69i59j0j0i457j0l2j69i60l3.2020j0j7&sourceid=chrome&ie=UTF-8</td>
                     </tr>
                     <tr>
-                      <td>Jason</td>
-                      <td>Thor</td>
+                      <td>MongoDB</td>
+                      <td>https://www.google.com/search?q=tech+workshop&oq=tech+workshop&aqs=chrome.0.69i59j0j0i457j0l2j69i60l3.2020j0j7&sourceid=chrome&ie=UTF-8</td>
                     </tr>
                     <tr>
-                      <td>BILL</td>
-                      <td>oWL</td>
+                      <td>Springboot</td>
+                      <td>https://www.google.com/search?q=tech+workshop&oq=tech+workshop&aqs=chrome.0.69i59j0j0i457j0l2j69i60l3.2020j0j7&sourceid=chrome&ie=UTF-8</td>
                     </tr>
-                    <tr>
-                      <td>JaSON STAHTAHM</td>
-                      <td>gLENDWICH</td>
-                    </tr>
+                   
                   </tbody>
                 </table>
                 </div>

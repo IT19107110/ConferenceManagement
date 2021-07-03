@@ -291,7 +291,7 @@ class RegPresenter extends Component {
                       type="text"
                       name="firstName"
                       id="firstName"
-                      placeholder="Enter first name"
+                      placeholder="First Name"
                       onChange={(e) => {
                         this.onValueChange(e);
                       }}
@@ -309,7 +309,7 @@ class RegPresenter extends Component {
                       type="text"
                       name="lastName"
                       id="lastName"
-                      placeholder="Enter last name"
+                      placeholder="Last Name"
                       onChange={(e) => {
                         this.onValueChange(e);
                       }}
@@ -327,7 +327,7 @@ class RegPresenter extends Component {
                       type="tel"
                       name="contactNumber"
                       id="contactNumber"
-                      placeholder="Enter the telephone number"
+                      placeholder="Contact Number"
                       onChange={(e) => {
                         this.onValueChange(e);
                       }}
@@ -345,7 +345,7 @@ class RegPresenter extends Component {
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="Enter email"
+                      placeholder="Your Email"
                       onChange={(e) => {
                         this.onValueChange(e);
                       }}
@@ -362,7 +362,7 @@ class RegPresenter extends Component {
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="Enter password"
+                      placeholder="Your Password"
                       onChange={(e) => {
                         this.onValueChange(e);
                       }}
@@ -490,11 +490,7 @@ class RegPresenter extends Component {
                       }}
                       required
                     />
-                    <FormText color="muted">
-                      This is some placeholder block-level help text for the
-                      above input. It's a bit lighter and easily wraps to a new
-                      line.
-                    </FormText>
+                    
                   </Col>
                 </FormGroup>
 
@@ -582,11 +578,7 @@ class RegPresenter extends Component {
                       }}
                       required
                     />
-                    <FormText color="muted">
-                      This is some placeholder block-level help text for the
-                      above input. It's a bit lighter and easily wraps to a new
-                      line.
-                    </FormText>
+                   
                   </Col>
                 </FormGroup>
 
@@ -639,7 +631,7 @@ class RegPresenter extends Component {
                 <FormGroup check row>
                   <Col sm={{ size: 10, offset: 2 }}>
                     <Button className="btn btn-warning" type="submit">
-                      Submit
+                      Submit Details
                     </Button>
                   </Col>
                 </FormGroup>

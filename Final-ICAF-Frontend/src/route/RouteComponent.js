@@ -13,7 +13,6 @@ import AdminAttendeePage from '../pages/AdminPage/AdminAttendeePage';
 import AdminResearcherPage from '../pages/AdminPage/AdminResearcherPage';
 import AdminPresenterPage from '../pages/AdminPage/AdminPresenterPage';
 import AdminConferenceDetailsPage from '../pages/AdminPage/AdminConferenceDetailsPage';
-import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import ReasearchPapersPage from '../pages/ReasearchPapersPage/ReasearchPapersPage';
 import ReviewerDashboard from '../pages/ReviewerDashboard/ReviewerDashboard';
 import EditorDashboard from '../pages/EditorDashboard/EditorDashboard';
@@ -45,7 +44,6 @@ class RouteComponent extends Component {
           <Route path='/adminpresenter' exact component={AdminPresenterPage} />
           <Route path='/adminconference' exact component={AdminConferenceDetailsPage}/>
           <Route path='/Papers' exact component={ReasearchPapersPage} />
-          <Route path='/Profile' exact component={ProfilePage} />
           <Route path='/ReviewerDashboard' exact component={ReviewerDashboard}/>
           <Route path='/editordashboard' exact component={EditorDashboard} />
           <Route path='/ReviewerDashboard' exact component={ReviewerDashboard}/>

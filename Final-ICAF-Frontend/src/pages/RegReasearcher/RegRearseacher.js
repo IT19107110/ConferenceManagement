@@ -266,7 +266,7 @@ class RegRearseacher extends Component {
                       type="text"
                       name="firstName"
                       id="firstName"
-                      placeholder="Enter first name"
+                      placeholder="First Name"
                       onChange={(e) => {this.onValueChange(e);}}
                       required
                     />
@@ -282,7 +282,7 @@ class RegRearseacher extends Component {
                       type="text"
                       name="lastName"
                       id="lastName"
-                      placeholder="Enter last name"
+                      placeholder="Last Name"
                       onChange={(e) => {this.onValueChange(e);}}
                       required
                     />
@@ -298,7 +298,7 @@ class RegRearseacher extends Component {
                       type="tel"
                       name="contactNumber"
                       id="contactNumber"
-                      placeholder="Enter the telephone number"
+                      placeholder="Contact Number"
                       onChange={(e) => {this.onValueChange(e);}}
                       required
                     />
@@ -314,7 +314,7 @@ class RegRearseacher extends Component {
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="Enter email"
+                      placeholder="Your Email"
                       onChange={(e) => {this.onValueChange(e);}}
                       required
                     />
@@ -329,7 +329,7 @@ class RegRearseacher extends Component {
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="Enter password"
+                      placeholder="Your Password"
                       onChange={(e) => {this.onValueChange(e);}}
                       required
                     />
@@ -356,11 +356,7 @@ class RegRearseacher extends Component {
                   </Label>
                   <Col sm={10}>
                     <Input type="file" name="file" id="exampleFile" onChange={(e) => {this.uploadImage(e);}} required/>
-                    <FormText color="muted">
-                      This is some placeholder block-level help text for the
-                      above input. It's a bit lighter and easily wraps to a new
-                      line.
-                    </FormText>
+                    
                   </Col>
                 </FormGroup>
 
@@ -407,7 +403,7 @@ class RegRearseacher extends Component {
 
                 <FormGroup row>
                   <Label for="checkbox2" sm={2}>
-                    Select if you are attending{" "}
+                    Choose if you are attending{" "}
                   </Label>
                   <Col sm={{ size: 10 }}>
                     {this.props.approvedWorkshopList.map(singleWorkshop => {return(
@@ -456,11 +452,7 @@ class RegRearseacher extends Component {
                     }}
                            required
                     />
-                    <FormText color="muted">
-                      This is some placeholder block-level help text for the
-                      above input. It's a bit lighter and easily wraps to a new
-                      line.
-                    </FormText>
+                   
                   </Col>
                 </FormGroup>
 

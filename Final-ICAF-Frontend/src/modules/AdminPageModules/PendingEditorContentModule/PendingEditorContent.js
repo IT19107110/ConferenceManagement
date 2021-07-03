@@ -24,11 +24,11 @@ export class PendingEditorContent extends Component {
                   <thead className="text-white">
                     <tr>
                       <th>No</th>
-                      <th>Workshop Title</th>
+                      <th>Conference Title</th>
                       <th>Description</th>
                       <th>Status</th>
                       <th>Approved</th>
-                      <th>Decline</th>
+                      <th>Declined</th>
                     </tr>
                   </thead>
                   <tbody className="text-white">
@@ -45,7 +45,7 @@ export class PendingEditorContent extends Component {
                               </button>
                             ) : (
                               <button className="btn btn-danger">
-                                Unpproved
+                                Unapproved
                               </button>
                             )}
                           </td>

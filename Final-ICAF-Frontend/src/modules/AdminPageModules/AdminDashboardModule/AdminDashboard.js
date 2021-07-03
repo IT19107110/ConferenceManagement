@@ -27,7 +27,7 @@ export class AdminDashboard extends Component {
                 boxShadow:10 
               }}
             >
-              <CardImg style={{background:"white"}} top width="100%" src={AboutImg}/>
+              <CardImg style={{background:"white"}} top width="100%" src={AboutImg2}/>
               <CardBody>
                 <CardTitle tag="h5" style={{ color: "white" }}>
                   EDITOR
@@ -82,7 +82,7 @@ export class AdminDashboard extends Component {
                     boxShadow:10 
                   }}
             >
-              <CardImg style={{background:"white"}} top width="100%" src={AboutImg}/>
+              <CardImg style={{background:"white"}} top width="100%" src={AboutImg2}/>
               <CardBody>
                 <CardTitle tag="h5" style={{ color: "white" }}>
                   ATTENDEE
@@ -110,7 +110,7 @@ export class AdminDashboard extends Component {
                       boxShadow:10 
                     }}
             >
-              <CardImg style={{background:"white"}}  src={AboutImg2}/>
+              <CardImg style={{background:"white"}}  src={AboutImg}/>
               <CardBody>
                 <CardTitle tag="h5" style={{ color: "white" }}>
                   RESEARCHER

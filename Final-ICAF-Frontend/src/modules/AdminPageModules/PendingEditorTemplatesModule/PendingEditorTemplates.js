@@ -26,9 +26,9 @@ export class PendingEditorTemplates extends Component {
                       <th>No</th>
                       <th>Template Name</th>
                       <th>Link</th>
-                      <th>Approved Status</th>
-                      <th>Approve</th>
-                      <th>Decline</th>
+                      <th>Status</th>
+                      <th>Approved</th>
+                      <th>Declined</th>
                     </tr>
                   </thead>
                   <tbody className="text-white">
@@ -50,7 +50,7 @@ export class PendingEditorTemplates extends Component {
                                 </button>
                               ) : (
                                 <button className="btn btn-danger">
-                                  Unpproved
+                                  Unapproved
                                 </button>
                               )}
                             </td>

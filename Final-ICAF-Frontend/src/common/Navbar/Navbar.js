@@ -9,13 +9,6 @@ export class Navbar extends Component {
       <div style={{background: "#0D335D "}}>
         <nav className="navbar navbar-expand-lg navbar-fixed-top  ">
         <div class="container">
-          <a className="navbar-brand" href="/">
-            <span
-              style={{ fontSize: "30px", fontWeight: "bold", color: "#ffffff" }}
-            >
-              ICAF<span style={{ color: "#ffb10a" }}>2021</span>
-            </span>
-          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -76,7 +69,7 @@ export class Navbar extends Component {
                   href="/Keynotes"
                   style={{ color: "#ffffff" }}
                 >
-                  KEYNOTES
+                  WORKSHOPS
                 </a>
               </li>
               <li className="nav-item active">
